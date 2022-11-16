@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성 사용</title>
+<style type="text/css">
+	.bgOrange {
+		background-color: orange;
+		}
+	.ft30 {
+		font-size: 30pt;
+		}
+</style>
+</head>
+<body>
+	<div style="text-align: center; background-color: skyblue;">
+	<!-- 
+		속성의 값은 하나를 쓰는 것이 일반적이지만,
+		여러 개의 속성을 나열하는 경우도 있다.
+		그때는 세미콜론(;)을 이용하여 나열한다. (style 속성 한정)
+	 -->
+		<h1 class="bgOrange ft30">미리 정의된 속성을 사용한 예</h1>
+		<img src="../img/cheese_cat.jpg" width="350px" height="auto" border="1" alt="치즈냥" title="고양이">
+		<br><!-- 줄바꿈 태그 -->
+		<!-- 
+			img 태그의 속성
+				src : 보여질 이미지 파일의 경로를 입력하는 속성
+				width : 이미지를 표현할 가로 사이즈
+				height : 이미지를 표현할 세로 사이즈
+				border : 이미지 테두리
+				alt : 작성한 위치에 파일이 없는 경우 대체할 텍스트
+				title : 이미지에 마우스가 올려졌을 때 보여질 팝업 텍스트
+		 -->
+		<!-- 
+			절대경로 : 시스템 또는 서버 주소 기준의 변하지 않는 절대적인 경로
+			상대경로 : 현재 보고 있는 파일 기준으로 산출된 대상 파일의 경로
+			
+			표현방식
+				절대경로 - C:\class\html\source\apple\WebContent\img\cheese_cat.jpg
+				상대경로 - ../img/cheese_cat.jpg ==> 현재 폴더와 형제 폴더인 img 폴더의 cheese_cat.jpg
+				
+					  	   ./cheese_cat.jpg ==> 현재 폴더의 cheese_cat.jpg
+			
+				참고 : 현재 파일의 상위 디렉토리 - "../"
+					   현재 파일과 같은 디렉토리 - "./" 또는 파일이름(폴더이름)
+		 -->
+		<a href="C:\class\html\source\apple\WebContent\img\cheese_cat.jpg">치즈냥2</a><br>
+		<a href="../img/cheese_cat.jpg" class="ft30">치즈냥3</a>
+	</div>
+</body>
+</html>

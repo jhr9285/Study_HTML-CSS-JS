@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Inline-Block Layout</title>
+
+<style type="text/css">
+	.inblock {
+		display: inline-block;
+	}
+	
+	.w20per {
+		width: 20%;
+		height: 100%;
+	}
+	
+	.w60per {
+		width: 60%;
+		height: 100%;
+	}
+	
+	.d1 {
+		height: 100%;
+		width: 100%;
+		border: 1px solid gray;
+		font-size: 12pt;
+		float: left;
+	}
+</style>
+
+</head>
+<body>
+	<!-- 머리말 태그 -->
+	<header style="height: 100px; text-align: center; border: 1px solid black;">header</header>
+	
+	<!-- 본문 태그  -->
+	<section style="margin-top: 10px; height: 300px; font-size: 0pt;">
+	
+		<nav class="inblock w20per" >
+			<div class="d1">
+				메뉴1<br>
+				메뉴2
+			</div>
+		</nav>
+		
+		<section class="inblock w60per">
+			<div class="d1">
+				section
+				
+				<header>
+					sub header
+				</header>
+				
+				<article>
+					article
+				</article>
+				
+				<footer>
+					sub footer
+				</footer>
+			</div>
+		</section>
+			 
+		<aside class="inblock w20per">
+		 	<div class="d1">
+				aside
+			</div>
+		</aside>
+		 
+	</section>
+	
+	<!-- 그 외 정보 태그 -->
+	<footer style="border: 1px solid blue; height: 50px; margin-top: 10px;">
+		<center>main footer</center>
+	</footer>
+
+</body>
+</html>
