@@ -20,65 +20,103 @@
 		border: 1px solid gray;
 		
 	}
-	
-	.labelsize {
-		font-size: 20pt;
-		width: 184px;
-		margin-right: 12pt;
+
+	label {
+		font-size: 24pt;
 	}
 	
-	.buttonsize {
+	input {
+		height: 52px;
+		width: 410px;
+		margin-left: 24px;
+		font-size: 16pt;
+		padding-left: 14px; /* placeholder 내용을 오른쪽으로 옮기고 싶을 때, 패딩 레프트 사용. */
+	}
+	
+	.btn {
+		width: 50%;
+		height: 40px;
 		text-align: center;
-		margin: 0pt;
-		font-size: 20pt;
+		font-size: 14pt;
+		line-height: 200%;
+		color: white;
+		cursor: pointer; /* 커서 올리면 커서가 손가락 표시로 바뀜  */
+		float: left;
 	}
+	
 
 </style>
 
 </head>
-<body style="margin: 0pt;">
+<body>
 
-	<div style="text-align: center;">
+	<div style="width: 650px; margin: 0pt auto; text-align: center;">
 
 <!-- 헤더 태그는 사이즈 맞추기 좋지 않음. 글씨가 정가운데 오지 않음. 텍스트 위치 상하 조정은 line-height 속성에 값은 %로. -->
 
-		<header class="w650 bd" style="height: 60pt; font-size: 30pt; margin: 0px auto; background-color: lightPink;">
+		<header class="w650 bd" style="height: 60pt; font-size: 30pt; margin: 0px auto; background-color: lightPink; line-height: 175%;">
 			<b>LOGIN</b>
 		</header>
 		
-		<div class="w650 bd" style="height: 220px; margin: 12pt auto;">
-			<section>
-				<label for="id" class="labelsize">
-					<b>I D :</b>
-				</label>
-				<input type="text" id="id" name="id" placeholder="아이디를 입력하세요." required
-						class="inputsize" style="margin: 30pt 24pt 12pt 0pt">
-								
-			</section>
-			
-			<section>
-				<label for="pw" class="labelsize">
-					<b>P W :</b>
-				</label>
-				<input type="password" id="pw" name="pw" placeholder="비밀번호를 입력하세요." required
-						class="inputsize" style="margin: 0pt 24pt 30pt 0pt">
-								
-			</section>
-		</div>
 		
-		<div style="width: 325px; height: 40px; background-color: green; float: left;">
-			<button type="button" class="buttonsize">
+		<div style="height: 220px; margin-top: 20px; border: 1px solid gray;">
+		
+			<div style="float: left; margin-top: 50px;">
+			
+				<section style="width: 140px; float: left; text-align: right;">
+					<label for="id">
+						<b>I D :</b>
+					</label>
+				</section>
+						
+				<section style="width: 430px; float: left;">
+					<input type="text" id="id" name="id" placeholder="아이디를 입력하세요." required>
+				</section>			
+				
+			<div style="float: left; margin-top: 12px;">	
+
+				<section style="width: 140px; float: left; text-align: right;">
+					<label for="pw">
+						<b>P W :</b>
+					</label>
+				</section>
+						
+				<section style="width: 430px; float: left;">
+					<input type="password" id="pw" name="pw" placeholder="아이디를 입력하세요." required>
+				</section>	
+				
+				
+				
+<!-- 			<section>
+					<label for="pw" class="labelsize">
+						<b>P W :</b>
+					</label>
+					<input type="password" id="pw" name="pw" placeholder="비밀번호를 입력하세요." required
+							class="inputsize" style="margin: 0pt 24pt 30pt 0pt">
+									
+				</section> -->
+				
+			</div>
+			
+		</div>
+	</div>
+
+	<footer style="margin-top: 20px;">
+		<div class="btn" style="background-color: green;" id="hbtn"><b>home</b></div>
+		<div class="btn" style="background-color: red;" id="lbtn"><b>login</b></div>
+	</footer>		
+		
+		
+<!-- 		<div style="width: 325px; height: 40px; text-align: center; margin: 0pt; font-size: 20pt; background-color: green; float: left;">
+			<input type="button" name="hm" id="hm">
 				<b>home</b>
-			</button>
 		</div>
 			
 		<div style="width: 325px; height: 40px; background-color: lightblue; float: left;">
-			<button type="button" class="buttonsize">
-				<b>login</b>
-			</button>
-		</div>
+			<input type="button" name="lg" id="lg">
+				<b>login</b> 
+ 		</div> -->
 
-	</div>
 
 </body>
 </html>
