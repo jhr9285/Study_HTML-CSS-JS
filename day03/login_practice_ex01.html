@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex01</title>
+
+<style type="text/css">
+	label {
+		font-size: 24pt;
+	}
+	
+	input {
+		height: 52px;
+		width: 410px;
+		margin-left: 24px;
+		font-size: 16pt;
+		padding-left: 14px; /* placeholder 내용을 오른쪽으로 옮기고 싶을 때, 패딩 레프트 사용. */
+	}
+	
+	.btn {
+		width: 50%;
+		height: 40px;
+		text-align: center;
+		font-size: 14pt;
+		line-height: 200%;
+		color: white;
+		cursor: pointer; /* 커서 올리면 커서가 손가락 표시로 바뀜  */
+		float: left;
+	}
+
+</style>
+
+</head>
+<body>
+	<div style="width: 650px; margin: 0px auto;">
+	
+	<!-- 타이틀 영역 -->
+		<h1 style="height: 60px; background-color: blue; color: white;
+			text-align: center; margin: 0px; line-height: 175%;">LOGIN</h1>	
+	
+	<!-- 입력 영역 -->
+		<section style="height: 220px; margin-top: 20px; border: 1px solid gray;">
+		
+	<!-- 라벨과 인풋 태그를 감싸는 div 태그 -->
+			<div style="float: left; margin-top: 50px;">
+	<!-- 라벨 태그를 감싸는 div 태그 -->
+				<div style="width: 140px; float: left; text-align: right;">
+					<label for="id">I D :</label>
+				</div>
+	<!-- 인풋 태그를 감싸는 div 태그 -->
+				<div style="width: 508px; float: left;">
+					<input type="text" name="id" id="id" placeholder="아이디를 입력하세요." required>
+				</div>
+			</div>
+			
+	<!-- 라벨과 인풋 태그를 감싸는 div 태그 -->		
+			<div style="float: left; margin-top: 12px;">
+	<!-- 라벨 태그를 감싸는 div 태그 -->
+				<div style="width: 140px; float: left; text-align: right;">
+					<label for="pw">P W :</label>
+				</div>
+	<!-- 인풋 태그를 감싸는 div 태그 -->
+				<div style="width: 508px; float: left;">
+					<input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요." required>
+				</div>
+			</div>
+		</section>		
+		
+	<!-- 버튼 영역  -->
+	<footer style="margin-top: 20px;">
+		<div class="btn" style="background-color: green;" id="hbtn"><b>home</b></div>
+		<div class="btn" style="background-color: red;" id="lbtn"><b>login</b></div>
+	</footer>
+	</div>
+
+</body>
+</html>

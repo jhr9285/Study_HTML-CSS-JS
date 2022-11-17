@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>LOGIN_PRACTICE</title>
+
+<style type="text/css">
+
+	.w650 {
+		width: 650px;
+	}
+	
+	.inputsize {
+		width: 430px;
+		height: 38px;
+		font-size: 15pt;
+	}
+	
+	.bd {
+		border: 1px solid gray;
+		
+	}
+	
+	.labelsize {
+		font-size: 20pt;
+		width: 184px;
+		margin-right: 12pt;
+	}
+	
+	.buttonsize {
+		text-align: center;
+		margin: 0pt;
+		font-size: 20pt;
+	}
+
+</style>
+
+</head>
+<body style="margin: 0pt;">
+
+	<div style="text-align: center;">
+
+<!-- 헤더 태그는 사이즈 맞추기 좋지 않음. 글씨가 정가운데 오지 않음. 텍스트 위치 상하 조정은 line-height 속성에 값은 %로. -->
+
+		<header class="w650 bd" style="height: 60pt; font-size: 30pt; margin: 0px auto; background-color: lightPink;">
+			<b>LOGIN</b>
+		</header>
+		
+		<div class="w650 bd" style="height: 220px; margin: 12pt auto;">
+			<section>
+				<label for="id" class="labelsize">
+					<b>I D :</b>
+				</label>
+				<input type="text" id="id" name="id" placeholder="아이디를 입력하세요." required
+						class="inputsize" style="margin: 30pt 24pt 12pt 0pt">
+								
+			</section>
+			
+			<section>
+				<label for="pw" class="labelsize">
+					<b>P W :</b>
+				</label>
+				<input type="password" id="pw" name="pw" placeholder="비밀번호를 입력하세요." required
+						class="inputsize" style="margin: 0pt 24pt 30pt 0pt">
+								
+			</section>
+		</div>
+		
+		<div style="width: 325px; height: 40px; background-color: green; float: left;">
+			<button type="button" class="buttonsize">
+				<b>home</b>
+			</button>
+		</div>
+			
+		<div style="width: 325px; height: 40px; background-color: lightblue; float: left;">
+			<button type="button" class="buttonsize">
+				<b>login</b>
+			</button>
+		</div>
+
+	</div>
+
+</body>
+</html>
