@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>셀 병합</title>
+<style type="text/css">
+
+	div {
+		width: 650px;
+		margin: 0px auto;
+	}
+	
+	table {
+		width: 100%;
+		border: 1px solid gray;
+		border-collapse: collapse;
+	}
+	
+	th {
+		background-color: orange;
+		width: 25%;
+	}
+	
+	td {
+		text-align: center;
+	}
+	
+</style>
+</head>
+<body>
+
+	<div>
+		<table border="1">
+			<caption><strong>셀 병합</strong></caption>
+			<tr>
+				<th>가</th>
+				<th>나</th>
+				<th>다</th>
+				<th>라</th>
+			</tr>
+			
+			<tr>
+				<td>1-1</td>
+				<td colspan="2">1-2</td> <!-- 1-2와 1-3을 병합하여 1-2로 만듦, 1-3은 실질적으로 없음 -->
+				<td>1-4</td>
+			</tr>
+
+			<tr>
+				<td rowspan="2">2-1</td> <!-- 2-1과 3-1을 병합하여 2-1로 만듦, 3-1은 실질적으로 없음 -->
+				<td>2-2</td>
+				<td>2-3</td>
+				<td>2-4</td>
+			</tr>
+			
+			<tr>
+				<td>3-2</td> 
+				<td>3-3</td>
+				<td>3-4</td>
+			</tr>
+			
+			<tr>
+				<td>4-1</td>
+				<td>4-2</td>
+				<td>4-3</td>
+				<td>4-4</td>
+			</tr>
+			
+		</table>
+	</div>
+
+</body>
+</html>
