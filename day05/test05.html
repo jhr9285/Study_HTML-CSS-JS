@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>login</title>
+<style type="text/css">
+	input {
+		width: 100%;
+	}
+	
+	.btn {
+		width: 32%;
+	}
+	
+	.frm {
+		width: 80%;
+		margin: 0px auto;
+	}
+	
+</style>
+
+</head>
+<body>
+	<div style="width: 600px; margin: 0px auto;">
+		<!-- 타이틀 -->
+		<h1 style="background-color: crimson; color: white; text-align: center; padding: 20px;">Login</h1>
+		<!-- 입력 폼 -->
+		<form method="get" action="test04.html" name="frm" class="frm">
+			<input type="hidden" name="mno" id="mno" value="1001"> <!-- input type hiddedn : 주소표시줄에 뜨는 "mno=1001" 데이터가 가려짐-->
+		<!-- 
+			속성 설명
+				method : 데이터 전달 방식을 의미함. 속성값은 get, post 2개만 있음.
+						- GET : 주소표시줄에 데이터를 실어서 보내는 방식.
+								=> 그래서 256byte 정도만 이 방식으로 보낼 수 있다. 많은 양의 데이터를 전송하지 못함.
+						- POST : 전달할 데이터를 헤더(request header)에 포함시켜서 보내는 방식.
+								 완전히 가려주는 건 아니고 개발자도구에서는 볼 수 있지만,
+								 그래도 바로 노출은 하지 않으므로 보안면에서 get보다 유리함.
+								 사이즈 제한 없이 전송 가능.
+								 
+				action : 데이터를 전달할 페이지 (="데이터를 전달할 테니 해당 페이지를 보여주세요")
+				
+				name : JavaScript에서 다시 설명....^^
+					   form 태그 내의 모든 내용을 객체로 만든다.(=메모리에 올린다.) 그래야 컴퓨터가 이 데이터를 실행한다.
+		 -->
+		 	<div>
+		 		<label for="id" class="lbl">I D :</label>
+		 		<input type="text" name="id" id="id" placeholder="아이디를 입력하세요." required>
+			</div>
+			
+		 	<div style="margin-top: 10px;">
+		 		<label for="pw" class="lbl">P W :</label>
+		 		<input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요." required>
+			</div>
+						
+			<!-- 버튼 (form 태그 아래에 뒀다가 안쪽으로 올림. 이유는? submit 버튼이 form 태그 안에 있어야 작동하기 때문!)--> <!-- input은 인라인태그 -->
+			<div style="margin-top: 25px; text-align: center;">
+				<input type="button" value="home" id="hbtn" class="btn">
+				<input type="reset" value="reset" id="rbtn" class="btn">
+				<input type="submit" value="login" id="lbtn" class="btn"> <!-- 감싸고 있는 form 태그 내용을 전송하는 버튼 -->			
+			</div>
+			<!-- style 태그에서 input 태그에 width 100%을 줬지만 input 태그 안에서 class로 width 30%를 반영해서 최종적으로 30%가 나옴 -->
+		
+		</form>
+		
+	</div>
+
+</body>
+</html>

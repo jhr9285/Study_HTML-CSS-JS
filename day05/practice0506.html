@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Practice 0506</title>
+<style type="text/css">
+	input {
+		width: 100%;
+	}
+	
+	label {
+		display: block;
+	}
+	
+	#tit, #body {
+		width: 100%;
+	}
+	
+</style>
+
+</head>
+<body>
+
+	<div style="width: 600px; text-align: center; margin: 0px auto;">
+		<h1 style="background-color: steelblue; color: white; padding: 10px;">글 작성</h1>
+		
+		<div>
+			<label for="tit">제목 :</label>
+			<input type="text" name="tit" id="tit" placeholder="제목을 입력하세요." required><br>
+		</div>
+		<div>	
+			<label for="body">내용 :</label>
+			<textarea cols="50" rows="10" name="body" id="body" style="resize: none;"
+					placeholder="내용을 입력하세요." required></textarea><br>
+		</div>		
+	
+	<input type="reset" name="rbtn" value="reset" style="width: 49%;">
+	<input type="submit" name="sbtn" value="글작성" style="width: 49%;">
+	
+	</div>
+
+</body>
+</html>

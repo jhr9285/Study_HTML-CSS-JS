@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Practice 0605</title>
+<style type="text/css">
+	#id1 {
+		background-color: pink;
+		color: blue;
+	}
+	#id2 {
+		background-color: yellow;
+		color: blue;
+	}
+	h2#id1 {/* h2태그에서 id1인 것 */
+		background-color: green;
+		color: white;
+	}
+	h2 #id1 {/* h2태그의 하위태그에서 id1인 것 */
+		background-color: black;
+		color: white;
+	}
+</style>
+</head>
+<body>
+	<h1 id="id1">id1 - h1</h1>
+	<p id="id1">id1 - p</p>
+	<h1 id="id2">id2 - h1</h1>
+	<p id="id2">id2 - p</p>
+	<h2 id="id1">id1 - <span id="id1">h2</span></h2>
+</body>
+</html>

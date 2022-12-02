@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Z-Index</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<style type="text/css">
+	.box {
+		width: 200px;
+		height: 200px;
+		float: left;
+	}
+	.box:nth-child(2) {
+		position: absolute;
+		top: 150px;
+		left: 150px;
+	}
+	.w3-deep-purple {
+		position: absolute;
+		top: 200px;
+		left: 100px;
+	}
+	.box:nth-child(4) {
+		position: absolute;
+		top: 250px;
+		left: 150px;
+		z-index: 2;
+	}
+	.box:nth-child(5) {
+		position: absolute;
+		top: 300px;
+		left: 200px;
+	}
+	.box:first-child {
+		position: relative;
+		z-index: 1;
+	}
+</style>
+</head>
+<body>
+	<div class="w3-content mxw650">
+		<h1 class="w3-pink w3-padding w3-card-4">Z-Index</h1>
+		<div class="w3-col w3-margin-top">
+			<div class="box w3-blue w3-border">box1</div>
+			<div class="box w3-indigo w3-border">box2</div>
+			<div class="box w3-deep-purple w3-border">box3</div>
+			<div class="box w3-purple w3-border">box4</div>
+			<div class="box w3-pink w3-border">box5</div>
+		</div>
+	</div>
+</body>
+</html>
