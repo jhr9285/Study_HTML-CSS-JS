@@ -1,0 +1,54 @@
+label {
+		font-size: 14pt;
+		padding-right: 10px;
+		line-height: 210%;
+	}
+	[for="gen"] {
+		font-size: 12pt;
+		padding-left: 10px;
+	}
+	img {
+		width: 88px;
+		height: 88px;
+		border: 1px solid gray;
+	}
+	.atlabel1 {
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		border: 1px solid gray;
+		position: relative;
+		left: 20px;
+		bottom: 30px;
+		padding: 5px;
+	}
+	.tc1 {
+		display: inline-block;
+		text-align: center;
+		position: relative;
+		left: 20px;
+		bottom: 30px;
+	}
+	.atlabel2 {
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		border: 1px solid gray;
+		position: relative;
+		right: 15px;
+		bottom: 40px;
+		padding: 5px;
+	}
+	.tc2 {
+		display: inline-block;
+		text-align: center;
+		position: relative;
+		right: 15px;
+		bottom: 40px;
+	}
+	
+	.avt {
+		max-width: 100px;
+		max-height: 100px;
+		text-align: center;
+	}
