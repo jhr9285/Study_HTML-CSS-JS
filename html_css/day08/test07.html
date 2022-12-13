@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Display</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<style type="text/css">
+	.box {
+		width: 200px;
+		height: 200px;
+		margin: 10px;
+	}
+	.box:nth-child(3) {
+		display: none;
+	}
+	.box:nth-child(6) {
+		visibility: hidden;
+	} 
+	#title, #box3 {
+		cursor: pointer;
+	}
+</style>
+
+</head>
+<body>
+	<div class="w3-content mxw700 w3-center">
+		<h1 class="w3-orange w3-padding w3-card-4" id="title">Display</h1>
+		<div class="w3-col w3-margin-top w3-padding">
+			<div class="inblock box w3-card">box1</div>
+			<div class="inblock box w3-card">box2</div>
+			<div class="inblock box w3-card" id="box3">box3</div>
+			<div class="inblock box w3-card">box4</div>
+			<div class="inblock box w3-card">box5</div>
+			<div class="inblock box w3-card">box6</div>
+			<div class="inblock box w3-card">box7</div>
+			<div class="inblock box w3-card">box8</div>
+		</div>
+	</div>
+<!-- 자바스크립트는 무조건 아래에 배치해야 함. getElementById 대문자,소문자 정확해야 함!! -->	
+<script type="text/javascript">
+	document.getElementById('title').onclick = function() {
+		document.getElementById('box3').style.display = "inline-block";
+	};
+	document.getElementById('box3').onclick = function() {
+		document.getElementById('box3').style.display = "none";
+	};
+</script>
+
+</body>
+</html>
