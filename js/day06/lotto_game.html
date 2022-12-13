@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+</head>
+<body>
+	<div class="w3-content mxw650 w3-center">
+		<h1 class="w3-blue w3-padding w3-card-4">이번주 로또번호</h1>
+		<div class="w3-col w3-margin-top w3-padding w3-card-4" id="content"></div>
+	</div>
+<script type="text/javascript">
+	/* 
+	로또 5게임의 번호를 생성하세요.
+	로또번호는 1 ~ 45 사이의 숫자 6개로 만들어진다.
+	*/
+	
+	
+	// 2차원 배열 - 배열 안에 배열이 들어가는 것
+	var lottoGame = []; 
+	
+	for(l = 0; l < 5; l++){
+		
+		lotto = []; // 1게임 번호 생성
+		
+		loop:
+		for(i = 0; lotto.length < 6; i++){
+			// 랜덤한 번호를 만든다.
+			var no = parseInt((Math.random() * (45 - 1 + 1)) + 1);
+			
+			// 중복검사
+			for(j = 0; j < i; j++){
+				// 중복인 경우
+				if(lotto[j] == no){
+					i--;
+					continue loop; // loop 라벨 걸어둬야 해당 if문 조건이 맞는 경우 continue로 i for문으로 돌아간다. 
+					/* break; */ // j 걸려있는 이 for 반복문을 끝낸다. 
+				}
+			}
+			
+			// 중복번호가 없으므로 배열에 채워준다.
+			lotto[i] = no;
+		} // 오름차순 정렬
+		for(i = 0; i < lotto.length - 1; i++){
+			for(j = i + 1; j < lotto.length; j++){
+				if(lotto[i] > lotto[j]){
+					var tmp = lotto[i];
+					lotto[i] = lotto[j];
+					lotto[j] = tmp;
+				}
+			}
+		}
+		
+		// 로또 번호가 배열까지 오름차순으로 완성 되었으므로 이를 감싸는 배열에 기억시킨다.
+		lottoGame[l] = lotto;
+	}
+	
+	
+	// 결과 출력
+	document.getElementById('content').innerHTML = '';
+	for(var i = 0; i < lottoGame.length; i++){ // 5줄로 만드는 반복문
+		var lotto = lottoGame[i];
+		document.getElementById('content').innerHTML = document.getElementById('content').innerHTML + lotto + '<br>';
+	}
+	
+	/*
+	
+	다음의 형태로 출력되게 하시오.
+	
+	|  4 |  5 | 18 | 34 | 40 | 45 |
+	| 16 | 22 | 27 | 38 | 40 | 44 |
+	|  1 |  5 | 26 | 29 | 40 | 45 |
+	|  3 | 16 | 35 | 37 | 38 | 44 |
+	|  3 | 13 | 16 | 18 | 25 | 38 |
+	
+	힌트) 숫자 < 10 ==> ' ' + 숫자
+	
+	*/
+	
+	var str = '';
+	for(var k = 0; k < lottoGame.length; k++){
+		var arr = lottoGame[k];
+		str = str + '<h3>| ';
+ 		for(var i = 0; i < arr.length; i++){
+			var no = arr[i];
+			var tmp = no < 10 ? ' &nbsp; ' + no + ' |' : ' ' + no + ' |';
+			str = str + tmp; // str = str + '<h3>|' + tmp
+		} 
+/* 		str = str + arr.join(' | '); */
+		str = str + ' </h3>'; // str = str + '<h3>|' + tmp + ' </h3>'
+	}
+	document.getElementById('content').innerHTML = str;
+
+	// 배열은 데이터를 하나씩 꺼내는 연습이 필요하다.
+	
+</script>
+</body>
+</html>

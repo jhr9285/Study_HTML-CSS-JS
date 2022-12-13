@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<style type="text/css">
+	#fr2 {
+		display: none;
+	}
+</style>
+</head>
+<body class="w3-container">
+	<!-- 정보 입력 태그  -->
+	<div class="w3-content mxw650" id="fr1">
+		<h1 class="w3-green w3-padding w3-center w3-card-4">정보 입력</h1>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-col w3-margin-top">
+				<label for="sid" class="w3-col m3 w3-right-align label1">아이디</label>
+				<div class="w3-col m7 pdl10">
+					<input type="text" name="id" id="sid" class="w3-input w3-border">
+				</div>
+			</div>
+			<div class="w3-col w3-margin-bottom mgt10">
+				<label for="spw" class="w3-col m3 w3-right-align label1">암호</label>
+				<div class="w3-col m7 pdl10">
+					<input type="password" name="pw" id="spw" class="w3-input w3-border">
+				</div>
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-half w3-orange w3-button" id="rbtn">reset</div>
+			<div class="w3-half w3-red w3-button" id="cbtn">confirm</div>
+		</div>
+	</div>
+	
+	<!-- 정보 확인 태그 -->
+	<div class="w3-content mxw650" id="fr2">
+		<h1 class="w3-green w3-padding w3-center w3-card-4">정보 확인</h1>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-col w3-margin-top">
+				<h3 class="w3-col m3 w3-right-align">아이디 :</h3>
+				<h3 class="w3-col m7 pdl10" id="pid"></h3>
+			</div>
+			<div class="w3-col w3-margin-bottom mgt10">
+				<h3 class="w3-col m3 w3-right-align">암호 :</h3>
+				<h3 class="w3-col m7 pdl10" id="ppw"></h3>
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-half w3-orange w3-button" id="bbtn">back</div>
+			<div class="w3-half w3-red w3-button" id="sbtn">submit</div>
+		</div>
+	</div>
+	
+	<!-- 데이터 전송 태그 -->
+	<form method="GET" action="result.html" class="w3-content mxw650" name="frm" id="frm"></form>
+<script type="text/javascript" src="../js/day09/ex01.js"></script>
+</body>
+</html>

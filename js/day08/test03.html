@@ -1,0 +1,26 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	var member = {
+		'name': 'chopa',
+		'age' : 25,
+		'job' : 'doctor',
+		'height' : 90.0
+	};
+	document.write('<h3 class="w3-center">' + member.name + ' - ' + member['job'] + '</h3>');
+	
+	member.rank = 6;
+	member['home'] = 'sunny';
+	document.write('<h3 class="w3-center">' + member.name + ' rank : ' + member['rank'] + '</h3>');
+	document.write('<h3 class="w3-center">' + member.name + ' home : ' + member.home + '</h3>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

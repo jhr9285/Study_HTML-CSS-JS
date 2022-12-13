@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+</head>
+<body>
+
+	<div class="w3-content mxw650 w3-center">
+		<h1 class="w3-blue w3-padding w3-card-4">랜덤한 정수( -10 ~ 10 )</h1>
+		<div class="w3-col w3-margin-top w3-padding w3-card-4" id="content"></div>
+	</div>
+	
+	
+<script type="text/javascript">
+/* 
+	랜덤한 숫자 발생시키기
+	
+	Math.random()  : 반환값이 0부터 1 사이의 숫자(실수)를 반환하는 함수. 단, 0은 반환하나 1은 반환하지 않는다.
+
+	원하는 범위의 정수를 발생시키는 공식)
+		parseInt(Math.random() * (큰 수 - 작은 수 + 1)) + 작은 수
+		
+		ex) 10 ~ 90 까지의 랜덤한 정수
+			parseInt(Math.randon() * (90 - 10 + 1)) + 10
+	*/
+
+	// -10 에서 10 사이의 랜덤한 정수
+	var str = '| ';
+	for(i = 0; i < 10; i++){ // 카운트 변수. 블럭 안에 i를 사용하지 않아도, 회차를 세는 기능을 한다. 10번 돌릴 것.
+		var no = parseInt(Math.random() * ((10 - (-10) + 1))) + (-10);
+		
+		str = str + no + " | ";
+	}
+	
+	document.getElementById('content').innerHTML = str;
+		
+</script>
+</body>
+</html>

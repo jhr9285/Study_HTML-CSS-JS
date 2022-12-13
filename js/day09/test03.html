@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+</head>
+<body>
+	<div id="org_div1">위 문장은 동적으로 만들어진 것입니다.</div>
+<script type="text/javascript">
+	var my_div = null;
+	var new_div = null;
+	
+	function addElement(){
+		new_div = document.createElement('div'); // 태그 객체 생성
+		var htag = document.createElement('h1');
+		htag.innerHTML = 'Hello......';
+		htag.setAttribute('class', 'w3-center w3-green w3-padding');
+		new_div.setAttribute('class', 'w3-content mxw650');
+		
+		new_div.appendChild(htag);
+		 
+		document.body.insertBefore(new_div, document.getElementById('org_div1'));
+	}
+	
+	addElement();
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	var kdata = ['서울', '부산', '안산', '대구', '인천', '과천', '대전'];
+	document.write(kdata + '<br>');
+	var str1 = kdata.splice(3, 1); // 잘라낼 숫자 인덱스, 갯수
+	document.write(str1 + '<br>');
+	document.write(kdata + '<br>');
+
+	var str2 = kdata.splice(1, 1, '강릉', '세종');
+	document.write(str2 + '<br>');
+	document.write(kdata + '<br>');
+	document.write(kdata[1] + '<br>');
+	document.write(kdata[2] + '<br>');
+	
+	var str3 = kdata.splice(2, Number.MAX_VALUE);
+	document.write(str3 + '<br>');
+	document.write(kdata + '<br>');
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	var kdata = ['서울', '부산', '안산', '대구', '인천', '과천', '대전'];
+	var str1 = kdata.slice(0, 4); // 시작점(포함), 도착점(미포함)
+	document.write('kdata : ' + kdata + '<br>');
+	document.write('str1 : ' + str1 + '<br>');
+	
+	var str2 = kdata.slice(2, -1); // 가장 마지막 인덱스는 -1 로 표기
+	document.write('str2 : ' + str2 + '<br>');
+	
+	var str3 = kdata.slice(-4, -2);
+	document.write('str3 : ' + str3 + '<br>');
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

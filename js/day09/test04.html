@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>타이머 함수</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+</head>
+<body>
+	<div class="w3-content mxw650">
+		<h1 class="w3-blue w3-padding w3-center">타이머 함수</h1>
+		<div class="w3-col">
+			<div class="w3-third w3-pink w3-button" id="ibtn">setInterval</div>
+			<div class="w3-third w3-purple w3-button" id="cbtn">clearInterval</div>
+			<div class="w3-third w3-deep-purple w3-button" id="tbtn">setTimeout</div>
+		</div>
+		<div class="w3-col w3-margin-top" id="fr"></div>
+ 	</div>
+
+<script type="text/javascript">
+
+	var intv = null;
+	var tout = null;
+	
+	function addBtn(){
+		var d1 = document.createElement('div');
+		d1.setAttribute('class', 'inblock w160 w3-blue w3-button');
+		d1.innerHTML = 'div tag';
+			document.getElementById('fr').appendChild(d1);
+	};
+	function addFullBtn(){
+		var d1 = document.createElement('div');
+		d1.setAttribute('class', 'w3-col w3-red w3-button');
+		d1.innerHTML = 'full div tag';
+			document.getElementById('fr').appendChild(d1);
+	};
+	
+	document.getElementById('ibtn').onclick = function(){
+		intv = setInterval(addBtn, 1000); // 1초마다 반복 실행
+	};
+	
+	document.getElementById('cbtn').onclick = function(){
+		clearInterval(intv);
+	};
+	
+	document.getElementById('tbtn').onclick = function(){
+		tout = setTimeout(addFullBtn, 500); // 0.5초에 한번 실행
+	};
+
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+</head>
+<body>
+	<div class="w3-content mxw650 w3-center">
+		<h1 class="w3-blue w3-padding w3-card-4">이번주 로또번호</h1>
+		<div class="w3-col w3-margin-top w3-padding w3-card-4" id="content"></div>
+	</div>
+	
+<script type="text/javascript">
+/* 
+	로또번호는 1 ~ 45 사이의 숫자 6개로 만들어진다.
+*/
+
+	var lotto = [];
+	
+	loop:
+	for(i = 0; lotto.length < 6; i++){
+		// 랜덤한 번호를 만든다.
+		var no = parseInt((Math.random() * (45 - 1 + 1)) + 1);
+		
+		// 중복검사
+		for(j = 0; j < i; j++){
+			// 중복인 경우
+			if(lotto[j] == no){
+				i--;
+				continue loop; // loop 라벨 걸어둬야 해당 if문 조건이 맞는 경우 continue로 i for문으로 돌아간다. 
+				/* break; */ // j 걸려있는 이 for 반복문을 끝낸다. 
+			}
+		}
+		
+		// 중복번호가 없으므로 배열에 채워준다.
+		lotto[i] = no;
+	}
+	
+	// 결과 출력
+	document.getElementById('content').innerHTML = lotto;
+	
+/* 
+	정렬 알고리즘
+		1. 버블정렬 (효율 낮아서 잘 안 쓰는 방식)
+			숫자가 10개 있으면, 앞에 두개 비교해서 큰 수를 오른쪽으로 배치, 첫 번째 시도에 가장 큰 수를 맨 오른쪽으로 배치
+			다음 회차에는 끝에서 한칸 앞의 수를 배치
+			이런 식으로 계속 반복하기 때문에 비효율적
+			
+		2. 선택정렬
+			숫자가 10개 있으면, 먼저 2개 비교해서 작은 수를 왼쪽에 배치,
+			이후 그 작은 수(첫번째 수)와 이후의 수를 모두 비교하여 최종적으로 가장 작은 수를 첫 번째 자리에 배치
+			그다음에는 두번째 수를 기준으로 동일하게 진행
+			
+			
+		위 로또 번호 배열을 선택정렬하시오.
+*/	
+	// 선택정렬 - 오름차순
+	// 1. 비교 원본 추출
+	for(i = 0; i < lotto.length - 1; i++){
+		
+	// 2. 비교 대상 추출
+		for(j = i + 1; j < lotto.length; j++){
+			if(lotto[i] > lotto[j]){
+				var tmp = lotto[i];
+				lotto[i] = lotto[j];
+				lotto[j] = tmp;
+			}
+		}
+	}
+	document.getElementById('content').innerHTML = lotto;
+	
+
+	// 선택정렬 - 내림차순
+	// 내림차순으로 역순 정렬 하시오.
+	for(i = 0; i < lotto.length - 1; i++){
+	
+		for(j = i + 1; j < lotto.length; j++){ // 화살표만 바뀜
+			if(lotto[i] < lotto[j]){
+				var tmp = lotto[i];
+				lotto[i] = lotto[j];
+				lotto[j] = tmp;
+			}
+		}
+	}
+	document.getElementById('content').innerHTML = lotto;
+	
+	
+	// 배열 버블정렬 - 오름차순  // 재검토 //
+	for(var i = 0; i < lotto.length - 1; i++){ // i 는 마지막 숫자의 위치까지 범위 지정
+		for(var j = 0; j < lotto.length - 1 - i; j++){ // j는 마지막 숫자 바로 앞 숫자까지  범위 지정
+			if(lotto[j] > lotto[j + 1]){
+				var tmp = lotto[j];
+				lotto[j] = lotto[j + 1];
+				lotto[j + 1] = tmp;
+			}
+		}
+	}
+	document.getElementById('content').innerHTML = lotto;
+</script>
+</body>
+</html>

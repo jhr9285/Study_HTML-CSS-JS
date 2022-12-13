@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	document.write([1, 3, 2].sort() + '<br>'); 
+	document.write(['1', '3', '2'].sort() + '<br>'); 
+	document.write(['가', '가나', '가하'].sort() + '<br>'); 
+	document.write(['거', '가나', '가하'].sort() + '<br>'); 
+	// 가능한가? ==> 가능하다. [1, 3, 2] 자체가 배열 객체로서 완전하기 때문. sort는 배열 전용 메소드고.
+	// 문자열의 정렬은 해당 문자에 부여된 아스키코드 값을 기준으로 이루어진다. 알파벳은 a~z 순, 한글은 ㄱ~ㅎ, ㅏ~ㅣ 순으로 숫자가 커진다.
+	
+	document.write('<hr>');
+	
+	// 랜덤하게 원의 반지름을 5개 기억하는 배열을 만드시오. (반지름 길이 범위 : 1 ~ 20)
+	var rad = [];
+	
+	for(i = 0; i < 5; i++){
+		rad[i] = 0;
+		var num = parseInt(Math.random() * (20 - 1 + 1)) +1;
+		rad[i] = num;
+	}
+	document.write('rad : ' + rad + '<br>');
+	
+	// 위 배열의 데이터를 반지름으로 하는 원의 둘레를 기억하는 배열을 만드시오.
+	var arround = rad.map(function(item){
+		return parseInt(2 * item * 3.14 * 100) / 100; // 100 곱하고 100으로 나누는 건 소수점 둘째자리까지 나오게 하기 위함임
+	});
+	document.write('arround : ' + arround + '<br>');
+	
+	document.write('<hr>');
+	
+	// 원의 다양한 정보들을 모아서 기억하는 배열을 만드시오.
+	var dongle = rad.map(function(data){
+		var arround = parseInt(2 * data * 3.14 * 100) / 100;
+		var area = parseInt(data * data * 3.14 * 100) / 100;
+		return [data, arround, area];
+	});
+	
+	for(var i = 0; i < dongle.length; i++){
+		document.write(dongle[i] + '<br>');
+	}
+	
+	document.write('<hr>');
+	
+	// 배열 안에 있는 데이터 하나씩 꺼내서 출력하는 기능 구현
+	dongle.forEach(function(data){ // data : dongle의 원소인 배열
+		data.forEach(function(item, index){ // item : data 배열 안의 원소, index : data 배열의 인덱스
+			switch(index){
+			case 0:
+			document.write('<h6 class="w3-col m2 w3-right-align">반지름 : </h6>');
+				break;
+			case 1:
+			document.write('<h6 class="w3-col m2 w3-right-align">원둘레 : </h6>');
+				break;
+			case 2:
+			document.write('<h6 class="w3-col m2 w3-right-align">원넓이 : </h6>');
+				break;
+			}
+			document.write('<h6 class="w3-col m2 w3-center">' + item + '</h6>');
+		});
+	});
+	
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

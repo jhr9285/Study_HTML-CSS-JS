@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	// concat()
+	// : 배열에 두 개 이상의 데이터를 결합하거나 다른 배열을 결합하는 함수
+	
+	var city01 = ['서울', '대구', '대전'];
+	var city02 = ['부산', '광주', '인천'];
+	var city03 = ['전주', '부여', '세종'];
+	
+	var data1 = city01.concat('수원');
+	document.write(city01 + '<br>');
+	document.write(data1 + '<br>');
+	
+	var data2 = city01.concat(city02);
+	document.write('data2 : ' + data2 + '<br>');
+	
+	var data3 = city01.concat(city03, city02); // 넣은 순서대로 결합 (city03 먼저, 이후에 city02)
+	document.write('data3 : ' + data3 + '<br>');
+	alert(Array.isArray(data3) ? '배열' : '배열X');
+	
+	var data4 = city01;
+	data4[3] = city02;
+	data4[4] = city03;
+	document.write('data4 : ' + data4[3][1] + '<br>');
+	// 배열이 배열 안에 원소로 들어가 있는 상황. 2차원 배열.
+	// data4[0],[1],[2] : 문자, data4[3],[4] : 배열 -> 인덱스 총 5개 (0 ~ 4)
+	
+	// data4에서 도시 이름 하나씩 꺼내서 h3 태그로 표현하시오.
+	
+	for(i = 0; i < data4.length; i++){
+		var dosi = data4[i];
+		if(Array.isArray(dosi)){ // dosi 원소가 배열인 경우
+			for(j = 0; j < dosi.length; j++){
+				document.write('<h3>');
+				document.write(dosi[j]);
+				document.write('</h3>');
+			}
+		} else { // dosi 원소가 문자열인 경우
+		document.write('<h3>');
+		document.write(dosi);
+		document.write('</h3>');
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

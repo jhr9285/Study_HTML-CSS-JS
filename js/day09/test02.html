@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	document.write('<p>문서의 URL 주소 : ' + location.href +'</p>');
+	document.write('<p>호스트 이름과 포트 : ' + location.host +'</p>'); // 서버가 돌아가는 게 아니어서 없음
+	document.write('<p>호스트 컴퓨터 이름 : ' + location.hostname +'</p>'); // 서버가 돌아가는 게 아니어서 없음
+	document.write('<p>앵커 이름 : ' + location.hash +'</p>'); 
+	document.write('<p>디렉터리 이하 경로 : ' + location.pathname +'</p>');
+	document.write('<p>포트번호 : ' + location.port +'</p>'); // 안 써서 안 보임
+	document.write('<p>프로토콜 종류 : ' + location.protocol +'</p>'); // 파일에 직접 접근해서 보여주는 상황이라 file
+	document.write('<p>URL에 포함된 파라미터 : ' + location.search +'</p>');
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<a href="test02.html?a=1&b=2#top">이 링크로 다시 실행하세요.</a>
+		<div class="w3-col w3-margin-top w3-center" id="btnfr">
+			<div class="w3-half w3-col w3-blue w3-hover-aqua w3-button" id="gbtn" onclick="func01(this)">google</div>
+			<div class="w3-half w3-col w3-green w3-hover-lime w3-button" id="wbtn" onclick="func01(this)">w3school</div>
+		</div>
+	</div>
+	
+<script type="text/javascript">
+/*	document.getElementById('gbtn').onclick = function(){
+		if(confirm('사이트로 이동하시겠습니까?')){
+			location.href='https://www.google.com';
+		}
+	};
+	document.getElementById('wbtn').onclick = function(){
+		if(confirm('사이트로 이동하시겠습니까?')){
+			location.href='https://www.w3schools.com';
+		}
+	};
+*/	
+/* 
+	Q. 버튼 태그에 클릭 이벤트를 추가하시오.
+	   단, 하나의 함수를 이용해서 두 개의 버튼에 대한 이벤트를 모두 처리하시오.
+*/
+	
+	function func01(el){
+		var txt = el.getAttribute('id'); // getAttribute : 속성값 읽어주는 함수
+		var url = '';
+	
+		switch(txt){
+		case 'gbtn':
+			url = 'https://www.google.com';
+			break;
+		case 'wbtn':
+			url = 'https://www.w3schools.com';
+			break;
+		}
+		
+		location.href = url;
+	};
+/* 
+	Q. 페이지가 열릴 때 파라미터가 존재하면 파라미터의 키값과 데이터를 분리해서 화면에 출력하시오.
+*/
+	// 파라미터가 존재하는지, 몇 개가 넘어올지 확인
+	var par = location.search;
+	// 있는 경우 값 
+	par = par.substring(1);
+	par = par.split('&'); // par를 & 기준으로 잘라서 만든 배열이 됨
+	
+ 	var data = {};
+ 	var keys = [];
+ 	for(var i = 0; i < par.length; i++){
+		var arr = par[i];
+		var tmp = arr.split('='); // arr를 = 기준으로 잘라서 만든 배열이 됨
+		var key = tmp[0];
+		var val = tmp[1];
+		keys.push(key);
+		data[key] = val;
+	} 
+ 	
+ 	for(var j = 0; j < keys.length; j++){
+ 		document.write(keys[j] + ' : ' + data[keys[j]] + '<br>');
+ 	}
+
+ 	var el = document.getElementById('btnfr').children; // 자식들을 모두 선택해서 el에 기억시킴
+	alert(el); 	
+</script>
+</body>
+</html>

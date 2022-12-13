@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	var nums = [];
+	// ==> 위 배열에 반복문을 사용해서 숫자를 1 ~ 10까지 채우시오.
+	
+	var i = 0;
+	while(i < 10){
+		nums[i] = i + 1;
+		i++;
+	}
+	document.write(nums + '<br>');
+	
+	// 배열의 데이터를 더한 값을 출력하시오.
+	
+	var sum = 0;
+	for(j = 0; j < nums.length; j++){
+		sum += nums[j];
+	}
+	document.write(sum + '<br>');
+	
+	// push 사용
+	var no = 1;
+	while(nums.length < 10){
+		nums.push(no++);
+	}
+	document.write(nums + '<br>');
+
+	// unshift 사용
+	for(k = 10; k < 0; k--){
+		nums.unshift(k);
+	}
+	document.write(nums + '<br>');
+	
+	// unshift 선생님 버전 (배열에 반복문으로 숫자를 1~10까지 채울 때)
+	/* 
+		for(var i = 0; i < 10; i++){
+			nums.unshift(10 - i);
+		}
+	*/
+	
+	// forEach 활용 (배열의 데이터를 모두 더할 때)
+	var total = 0;
+	nums.forEach(function(item){ // nums 배열의 모든 원소를 배열 길이를 횟수로 삼아서 그 횟수만큼 반복한다.
+		total += item; // total에 그 값들을 누적하여 더한다.
+	});
+	document.write(total + '<br>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

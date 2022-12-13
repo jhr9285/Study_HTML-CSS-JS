@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Stack</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	var kdata = ['서울', '부산', '안산', '수원', '인천'];
+	var p1 = kdata.push('과천', '안양'); // 배열 맨 끝에 데이터를 추가하는 메소드
+	document.write('p1 : ' + p1 + '<br>');
+	document.write('kdata : ' + kdata + '<br>');
+	
+	var p2 = kdata.pop();
+	document.write('p2 : ' + p2 + '<br>');
+	document.write('Array.isArray(p2) : ' + Array.isArray(p2) + '<br>');
+	document.write('p2 instanceof string : ' + (p2 instanceof String) + '<br>');
+	document.write('typeof p2 : ' + (typeof p2) + '<br>');
+	document.write('kdata : ' + kdata + '<br>');
+	
+	var nums = [1,2,3,4,5];
+	var tmp = nums.pop();
+	document.write('typeof tmp : ' + (typeof tmp) + '<br>');
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

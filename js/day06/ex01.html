@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/w3color.js"></script>
+<script type="text/javascript">
+/* 
+	문제 1)
+		다섯 학생의 국어, 영어, 수학 점수를 기억할 배열을 만들고
+		점수를 60 ~ 100 사이로 랜덤하게 만들어서 채워 넣으시오.
+		
+	문제 2)
+		각 학생들의 총점을 계산하여 출력하시오.
+		
+	문제 3)
+		총점까지 기억하는 배열을 만들고,
+		총점이 높은 학생부터 정렬해서, 결과를 출력하시오.
+*/
+
+	// 1.
+	
+	var score = []; // 다섯 학생의 점수 기억할 배열
+	var gradeArr = [];
+	
+	for(var j = 0; j < 5; j++){ // 다섯 번 반복 ==> 다섯 학생의 각 과목 점수
+		
+		var grade = []; // 한 학생의 각 과목 점수
+		
+		for(var i = 0; i < 3; i++){
+			var no = parseInt(Math.random() * (100 - 60 + 1)) + 60;
+			grade[i] = no;
+		} // 한 학생의 점수가 완성되었으므로 
+		score[j] = grade;
+//		document.write(score[i] + '<br>'); 
+/*
+	// 2.
+	stuGrade = 0;
+	
+		for(k = 0; k < 3; k++){
+			stuGrade += grade[k];
+		}
+//		document.write(stuGrade + '<br>');  // score[4]의 합계만 나오고 있음...
+	// 3.
+	
+	*/
+	}	
+	
+	alert(score[0][2]);
+	for(var i = 0 ; i < score.length ; i++ ){
+		var arr = score[i];
+		alert(arr[1]);
+		/*
+		for(var j = 0 ; j < arr.length ; j++ ){
+			gradeArr[i][j] = arr[j];
+		}
+		
+		for(var j = 0 ; j < score[i].length ; j++ ){
+			gradeArr[i][3] = 0 ;
+			gradeArr[i][3] += score[i][j];
+		}
+		*/
+	}
+	/*
+	for(var i = 0; i < score.length; i++ ){
+		var sum = 0;
+		
+		for(var j = 0; j < score[i].length ; j++){
+			gradeArr[i][j] = score[i][j];
+			sum += score[i][j];
+		}
+		gradeArr[i][3] = sum;
+	}
+	*/
+//	document.write(score + '<br>');
+	document.write(gradeArr + '<br>');
+		
+		
+	
+
+	
+	
+	
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

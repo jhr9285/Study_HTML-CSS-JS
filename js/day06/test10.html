@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	sort() : 배열에 기억된 데이터를 오름차순으로 정렬해서 수정하는 함수
+	reverse() : 배열에 기억된 데이터를 역순으로 수정하는 함수
+*/
+	var lotto = [];
+	
+	loop:
+	for(var i = 0; i < 6; i++){
+		//매회차의 번호 만들기
+		var no = parseInt(Math.random() * 45) + 1;
+		//중복 검사
+		for(var j = 0; j < i; j++){
+			if(lotto[j] == no){  // 이미 기억하고 있는 번호인 경우
+				i--;
+				continue loop;
+			}
+		}
+		//중복 검사 통과한 경우이므로 번호를 배열에 채워준다.
+		lotto[i] = no;
+	}
+	//출력
+	document.write('정렬 전 번호 : ' + lotto + '<br>');
+	//정렬
+	lotto.sort(); //문자열로 비교 후 정렬...
+	document.write('정렬 후 번호 : ' + lotto + '<br>'); 
+	//역순
+	lotto.reverse();
+	document.write('정렬 후 번호의 역순 : ' + lotto + '<br>'); 
+	
+	//수치정렬 (정렬할 때 아래 함수를 써서 정렬하라는 의미, 반환값이 양수면 자리를 바꾸고 음수면 유지하도록.)
+	lotto.sort(function(a, b){ // a가 왼쪽에, b가 오른쪽에 쓰여 있는데 a가 더 크면 오른쪽으로 자리를 바꾸라는 의미. 오름차순 정렬 되도록.
+		return a - b;	
+	});
+	document.write('수치 정렬 후 번호 : ' + lotto + '<br>'); 
+	//역순
+	lotto.reverse();
+	document.write('수치 정렬 후 번호의 역순 : ' + lotto + '<br>'); 
+</script>
+</head>
+<body>
+
+</body>
+</html>

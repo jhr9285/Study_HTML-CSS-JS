@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	var arr = [];
+	for(var i = 0; i < 10; i++){
+		arr[i] = (i + 1) * 10;
+	}
+	var idx = arr.indexOf(70); // 앞에서부터 검색한 인덱스
+	var idx2 = arr.lastIndexOf(70); // 뒤에서부터 검색한 인덱스
+	
+	arr[1] = 30;
+	arr[8] = 30;
+	arr[5] = 30;
+	var idx3 = arr.indexOf(30); 
+	var idx4 = arr.indexOf(30, 2); // 2는 갯수가 아니라 인덱스 위치임, 3번째 위치 이후 처음으로 나오는 30의 위치 반환 
+	var idx5 = arr.indexOf(30, 4); 
+	
+	document.write('<div class="w3-content mxw600">');
+	document.write('<h1 class="w3-blue w3-padding w3-card-4 w3-center">indexOf()</h1>');
+	
+	document.write('<h2 class="w3-margin-top w3-center">');
+	for(var i = 0; i < arr.length; i++){
+		document.write(arr[i] + ' | ');
+	}
+	
+	document.write('<h2>');
+	
+	document.write('<h2 class="w3-text-red w3-center">70의 인덱스1 : ' + idx + '</h2>');
+	document.write('<h2 class="w3-text-red w3-center">70의 인덱스2 : ' + idx2 + '</h2>');
+	document.write('<h2 class="w3-text-red w3-center">30의 인덱스1 : ' + idx3 + '</h2>');
+	document.write('<h2 class="w3-text-red w3-center">30의 인덱스2 : ' + idx4 + '</h2>');
+	document.write('<h2 class="w3-text-red w3-center">30의 인덱스3 : ' + idx5 + '</h2>');
+	document.write('</div>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

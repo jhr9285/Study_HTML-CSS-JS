@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+문제 1)
+	다섯 학생의 국어, 영어, 수학 점수를 기억할 배열을 만들고
+	점수를 60 ~ 100 사이로 랜덤하게 만들어서 채워 넣으시오.
+	
+문제 2)
+	각 학생들의 총점을 계산하여 출력하시오.
+	
+문제 3)
+	총점까지 기억하는 배열을 만들고,
+	총점이 높은 학생부터 정렬해서, 결과를 출력하시오.
+*/
+	var score = []; // 다섯 학생의 점수 기억할 배열
+	var sumArr = []; // 총점까지 기억할 배열
+	
+	for(var j = 0; j < 5; j++){ // 다섯 번 반복 ==> 다섯 학생의 각 과목 점수
+		grade = []; // 한 학생의 각 과목 점수
+		for(var i = 0; i < 3; i++){
+			var no = parseInt(Math.random() * (100 - 60 + 1)) + 60;
+			grade[i] = no;
+		} // 한 학생의 점수가 완성되었으므로 
+		score[j] = grade;
+	}
+	// 다섯 학생의 세 과목 점수를 하나의 배열로 취합하여 출력 (반복문으로 어떻게 구현할지 고민)
+ 	document.write('score : ' + score + '<br>'); 	
+	
+	var sum1 = parseInt(score[0][0] + score[0][1] + score[0][2]);
+	var sum2 = parseInt(score[1][0] + score[1][1] + score[1][2]);
+	var sum3 = parseInt(score[2][0] + score[2][1] + score[2][2]);
+	var sum4 = parseInt(score[3][0] + score[3][1] + score[3][2]);
+	var sum5 = parseInt(score[4][0] + score[4][1] + score[4][2]);
+	
+	var sum = [sum1, sum2, sum3, sum4, sum5]; // 각 학생별 총점 배열
+	
+	
+	for(l = 0; l < 5; l++){
+		sumArr[l] = score[l].concat(sum[l]);
+	}
+/* 	sumArr[0] = score[0].concat(sum1);
+	sumArr[1] = score[1].concat(sum2);
+	sumArr[2] = score[2].concat(sum3);
+	sumArr[3] = score[3].concat(sum4);
+	sumArr[4] = score[4].concat(sum5); */
+		
+	document.write('sumArr : ' + sumArr + '<br>');
+	
+	// 총점이 높은 학생부터 정렬하여 결과 출력
+ 	sum.sort();
+	sum.reverse();
+	document.write('sum : ' + sum + '<br>'); 
+	
+	/*
+		sumArr[l][3].sort();
+		sumArr[l][3].reverse();
+		document.write(sumArr + '<br>'); 
+	*/
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

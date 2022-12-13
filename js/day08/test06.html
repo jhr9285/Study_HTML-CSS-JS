@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	var str = new String('chopa');
+	var name = 'chopa';
+	// 위 두 코드는 값은 같으나 타입은 다르다. 그러나 string 역시 문자라는 틀로 만들어진 객체.
+	document.write(typeof str + ' | ' + typeof name + '<br>');
+	
+	var arr = new Array(1,2,3);
+	var arr1 = [1,2,3];
+	document.write(arr + '<br>');
+	document.write(arr1 + '<br>');
+	
+	var sigan = new Date(); // Date : 실행되는 그 시간을 데이터로 표시해서 객체로 만들어준다.
+	document.write(sigan + '<br>')
+	
+	document.write(Math.PI + '<br>') // 파이는 상수!
+	
+	var str = 'Chopa';
+	document.write(str + '<br>');
+	var result = str.toUpperCase(); // 대문자로 변환
+	document.write(result + '<br>');
+	
+	result = result.toLowerCase(); // 소문자로 변환
+	document.write(result + '<br>');
+	
+	
+	var msg = 'Responsive sizes for medium screens';
+	var idx = msg.indexOf(' '); // 공백 문자의 위치값 반환
+	var idx2 = msg.indexOf(' ', idx + 1);
+	var sdata = msg.slice(idx, idx2);
+	document.write(sdata + '<br>');
+	var sdata2 = msg.substring(idx, idx2);
+	document.write(sdata2 + '<br>');
+	 
+	var msg2 = msg.replace(' ', '#'); // 첫번째 파라미터를 두번째 파라미터 값으로 바꾼다. 처음 나타난 첫번째 파라미터값만.
+	document.write(msg2 + '<br>');
+	var msg3 = msg.search(' ');
+	document.write(idx + ' | ' + idx2 + '<br>');
+	
+	var sdata = msg.substr(idx + 1, 2); 
+	document.write(sdata + '<br>');
+	
+	var name = '          chopa      chopa          ';
+	name = name.trim(); // 문자열의 앞뒤 공백만 없애주는 함수
+	document.write(name + '<br>');
+	
+	document.write(msg.charCodeAt('A') + '<br>'); // 오류남.. 82 나오는데 이거 아님
+
+	var param = '?id=chopa&pw=12345&mail=chopa@githrd.com&job=doctor';
+	param = param.split('&'); // & 기준으로 데이터를 앞뒤로 나눠줌.. 자동으로 배열이 됨
+	document.write(param + '<br>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

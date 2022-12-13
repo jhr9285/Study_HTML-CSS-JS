@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+	<div class="w3-content mxw700 w3-center">
+		<h1 class="w3-green w3-padding w3-card-4">배열 데이터 삭제</h1>
+		<div class="w3-col w3-margin-top w3-padding w3-card-4" id="content"></div>
+			<div class="inblock m3 w3-button w3-orange w3-margin-top" id="ibtn">배열 데이터 초기화</div> <!-- 초기화 = 값 넣기 -->
+			<div class="inblock m3 w3-button w3-yellow w3-margin-top" id="cbtn">배열 데이터 교체</div> <!-- 데이터를 0으로 교체한다는 의미 -->
+			<div class="inblock m3 w3-button w3-red w3-margin-top" id="dbtn">배열 데이터 삭제</div> <!-- 데이터를 기억공간까지 삭제한다는 의미 -->
+	</div>
+	
+<script type="text/javascript">
+	var arrdata = [];
+	
+	// 배열 초기화 함수
+	function initArr(){
+		for(i = 0; i < 100; i++){
+			arrdata[i] = i + 1;
+		}
+	};
+	
+	// 배열에 기억된 데이터를 0으로 교체하는 함수
+	function delDataArr(){
+		for(i = 0; i < arrdata.length; i++){
+			arrdata[i] = 0;
+		}
+	};
+	
+	// 배열 데이터 삭제 함수 (배열의 기억공간까지 삭제하는 함수)
+	function delAllData(){
+		arrdata.length = 0; // 배열의 길이를 0으로 바꾼다. 그러면 length가 기억하고 있는 데이터의 갯수를 의미하니까, 0으로 바꾸면 모든 데이터가 사라지는 것.
+	};
+	
+	// id="content" 인 태그에 배열의 내용을 출력해주는 함수
+	function printArr(){
+		// 1. 출력 내용을 만든다
+		var str = '';
+		if(arrdata.length == 0){
+			str = 'arrdata의 내용이 비어있습니다.';
+		} else {
+			for(i = 0; i < arrdata.length; i++){
+				str = str + arrdata[i] + ', ';
+			}
+		}
+		// 2. 문자열을 출력할 태그를 선택해서 출력한다 (일반태그에 출력할 때는 innerHTML, 입력태그에 출력할 때는 a.b.value)
+		var el = document.getElementById('content');
+		el.innerHTML = str;
+	};
+	
+	// 초기화 버튼 클릭 이벤트
+	document.getElementById('ibtn').onclick = function(){
+		initArr();
+		printArr(); // 초기화됐는지 배열 데이터 확인해야 함
+	};
+	// 삭제 버튼 클릭 이벤트
+	document.getElementById('dbtn').onclick = function(){
+		delAllData();
+		printArr(); // 삭제됐는지 배열 데이터 확인해야 함
+	};
+	
+	// 교체 버튼 클릭 이벤트
+	document.getElementById('cbtn').onclick = function(){
+		// 삭제한 후에 교체 버튼 클릭했을 때, 출력값이 없는 상황을 if로 추가 반영
+		if(arrdata.length == 0){
+			document.getElementById('content').innerHTML = '<h5 class="w3-text-red">배열이 비어있습니다.</h5>';
+		} else {
+			delDataArr();
+			printArr(); // 교체됐는지 배열 데이터 확인해야 함
+		}
+	};
+	
+	
+	
+</script>
+</body>
+</html>
