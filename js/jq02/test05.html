@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<style type="text/css">
+	.box100:hover {
+		width: 200px;
+		height: 200px;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){ // document가 준비되면 이 함수 호출하라는 의미
+		$('#title').click(function(){
+			$(this).toggleClass('w3-lime w3-red');
+		});
+	
+		$('#title').mousemove(function(){
+			var red = parseInt(Math.random()*256);
+			var green = parseInt(Math.random()*256);
+			var blue = parseInt(Math.random()*256);
+			
+			$(this).removeClass('w3-lime w3-red');
+			$(this).css('background-color', 'rgb(' + red + ', ' + green + ', ' + blue +')'); // rgb () 안에는 문자열이 들어가야 함.
+		});
+	
+/* 		$('.box100').mouseover(function(){
+			$(this).removeClass('w3-yellow').addClass('w3-orange');
+			$(this).css('width', '200px').css('height', '200px');
+		});
+		$('.box100').mouseout(function(){
+			$(this).removeClass('w3-orange').addClass('w3-yellow');
+			$(this).css('width', '100px').css('height', '100px');
+		}); */
+ 		
+		$('.box100').hover(function(){
+			if($(this).hasClass('w3-yellow')){
+				$(this).removeClass('w3-yellow').addClass('w3-orange');
+				/* $(this).css('width', '200px').css('height', '200px'); */
+			} else {
+				$(this).removeClass('w3-orange').addClass('w3-yellow');
+				/* $(this).css('width', '100px').css('height', '100px'); */
+			}
+		});
+		
+		// Q1. 클래스가 box100 인 태그의 아이디 속성값을 부여하시오.
+			
+			var idx = 0;
+			var nums = [];
+			var tags =  $('.box100');
+
+			for(var i = 0; i < tags.get().length; i++){ // 제이쿼리 객체를 get 함수로 자바스크립트 객체로 바꿔서 렝스 구하기
+				tags.eq(i).attr('id', 'box' + (i + 1));
+			}
+			
+/* 			// 선생님 버전 (each 함수 사용)
+ 
+			$('.box100').each(function(idx, val){
+				$(val).attr('id', $(val).html());
+			}); */
+		
+			
+		// Q2. Q1의 태그가 클릭이 되면 아이디 속성값을 출력(alert)되도록 하시오.
+		
+		/*
+			tags.eq(0).click(function(){
+				alert(tags.eq(0).prop('id'));
+			});	
+		 */
+		 
+		 // 어느 것을 선택할지 모를 때 this!!!
+		 tags.click(function(){
+			 alert($(this).attr('id'));
+			 $(this).html($(this).attr('id'));
+		 });
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw650 w3-center">
+		<h1 class="w3-lime w3-padding" id="title">마우스 이벤트</h1>
+		<div class="w3-col w3-margin-top">
+			<div class="inblock box100 w3-yellow mgb10 mgl10">div1</div>
+			<div class="inblock box100 w3-yellow mgb10 mgl10">div2</div>
+			<div class="inblock box100 w3-yellow mgb10 mgl10">div3</div>
+			<div class="inblock box100 w3-yellow mgb10 mgl10">div4</div>
+			<div class="inblock box100 w3-yellow mgb10 mgl10">div5</div>
+			<div class="inblock box100 w3-yellow mgb10 mgl10">div6</div>
+			<div class="inblock box100 w3-yellow mgb10 mgl10">div7</div>
+			<div class="inblock box100 w3-yellow mgb10 mgl10">div8</div>
+		</div>
+	</div>
+</body>
+</html>

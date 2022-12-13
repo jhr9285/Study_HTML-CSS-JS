@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+/*  	$(document).ready(function(){
+		var resultname = location.search;
+		resultname = resultname.substring(1);
+		resultname = resultname.split('=');
+		$('#foodImg').attr('src', '../img/w3images/' + resultname[1] + '.jpg');
+	});  */
+ 	$(document).ready(function(){
+		var resultname = decodeURIComponent(location.search);
+		resultname = resultname.substring(1);
+		resultname = resultname.split('&'); // 1차원 배열
+		// = [imgname=Sandwich,
+		//    imgtitle=just+some+random+text%2C+lorem+ipsum+text+praesent+tin cidunt+ipsum+lipsum,
+		//    imgcontents=The+Perfect+Sandwich%2C+A+Real+NYC+Classic]
+		
+ 	 	var keys = [];
+		var resultArr = {};
+		
+		for(var i = 0; i < resultname.length; i++){
+			var arr = resultname[i].split('=');
+			keys[i] = arr[0];
+			resultArr[keys[i]] = arr[1];
+		}
+		
+ 		var result1 = document.createElement('div');
+		$('#foodImg').append(result1);
+		$(result1).html(resultArr['imgtitle']);
+		
+		var result2 = document.createElement('div'); 
+		$('#foodImg').append(result2);
+		$(result2).html(resultArr['imgcontents']); 
+		
+	 	$('#foodImg').attr('src', '../img/w3images/' + resultArr['imgname'] + '.jpg'); 
+		
+		
+	}); 
+
+</script>
+</head>
+<body>
+	<div class="w3-content mxw700 w3-center">
+		<h1 class="w3-green w3-padding w3-card-4">선택 이미지</h1>
+		<div class="w3-col w3-center w3-margin-top">
+			<div class="inblock w3-card-4 w3-border" style="width: 450px; height: 675px; padding: 10px; overflow: hidden;">
+				<img src="" id="foodImg" width="100%" height="auto">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

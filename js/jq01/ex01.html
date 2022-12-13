@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<style type="text/css">
+	#fr2 {
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+		/* 
+			아래 내용을 참고하여 숙제를 다시 해보시오...
+					
+			jQuery
+			입력태그의 입력내용 꺼내는 함수 : val()
+			일반태그의 내용 꺼내는 함수 : html()
+			
+			==>
+				내용 입력
+					입력태그 : $(태그선택).val(데이터);
+					일반태그 : $(태그선택).html(데이터);
+		*/
+	$(document).ready(function(){
+/* 
+	Q. 리셋버튼 기능 구현하시오.
+*/
+		$('#rbtn').click(function(){
+			$('#sid').val('');
+			$('#spw').val('');
+		});
+/*
+	Q.
+	confirm 버튼 클릭 시,
+	정보 입력 화면의 입력창에 입력된 내용을 지우고, 정보 입력 화면이 사라지고, 정보 확인 화면이 나타나게 하시오.
+	그 정보 확인 화면에는 아이디와 암호가 작성되어 있어야 합니다.
+*/		$('#cbtn').click(function(){
+			$('#sid').val(); // val() 에서 () 안에 아무것도 안 쓰면, value 값을 읽어온다.
+			$('#spw').val();
+			
+			$('#pid').addClass('w3-center').html($('#sid').val());  // pid 태그는 일반태그이므로 html 함수를 써야 값을 넣을 수 있다.
+			$('#ppw').addClass('w3-center').html($('#spw').val());
+			
+			$('#sid').val('');
+			$('#spw').val('');
+			
+			$('#fr1').css('display', 'none');
+			$('#fr2').css('display', 'block');
+		});
+/*	Q.
+	back 버튼 클릭 시,
+	정보 확인 화면의 아이디와 암호를 지우고, 정보 확인 화면이 사라지고, 정보 입력 화면이 나타나게 하시오.
+*/
+		$('#bbtn').click(function(){
+			
+			$('#pid, #ppw').html('');
+			
+			$('#fr2').css('display', 'none');
+			$('#fr1').css('display', 'block');
+			
+/* 			위 코드를 아래와 같이 한 줄로 쓸 수 있다.
+ 
+			ex1) $('#pid, #ppw').html('').parent().parent().parent().css('display', 'none').prev().css('display', 'block');
+			ex2) $('#pid, #ppw').html('').parents().filter('#fr2').css('display', 'none').prev().css('display', 'block'); */
+		});
+			
+/*	Q.
+	submit 버튼 클릭 시,
+	정보 확인 화면의 아이디와 암호를 읽어서 데이터 전송 화면의 아이디, 암호에 채우고 해당 form을 전송하시오.
+	** form 태그 내의 input 태그 없는 상태로 전송하기 (id="id", it="pw" 없는 상태로 보내기) **
+*/
+		$('#sbtn').click(function(){
+			var checkId = $('#pid').html();
+			var checkPw = $('#ppw').html();
+			
+			var idInput = document.createElement('input');
+			var pwInput = document.createElement('input');
+			
+			// 위의 변수 두개는 자바스크립트 객체. 그 객체에 $() 표시를 붙이는 순간 객체는 제이쿼리 객체가 된다.
+			$(idInput).attr('type', 'hidden').attr('name', 'id').attr('id', 'id').attr('value', checkId);
+			$(pwInput).attr('type', 'hidden').attr('name', 'pw').attr('id', 'pw').val(checkPw);
+			// type : hidden 은 정보값을 숨겨서 전송하게 하는 타입. 파라미터는 기본적으로 text 화 되기 때문에 그부분은 신경 쓸 필요 X
+			// val 함수는 value 속성 및 속성값을 생성시키는 함수이기도 해서, attr을 사용하지 않아도 됨.
+			
+			$('#frm').append($(idInput)); // append 함수 () 안에는 태그를 넣는다. 텍스트로 만든 태그도 들어갈 수 있다. #frm 태그 영역의 맨 끝에 붙인다.
+			$('#frm').append($(pwInput)); // <-> prepend 함수 : append와 쓰는 방식은 동일한데, #frm 태그 영역의 맨앞에 들어간다.
+			
+			if(confirm('제출하시겠습니까?')){
+				$('#frm').submit();
+			}
+		});
+	});
+</script>
+</head>
+<body class="w3-container">
+	<!-- 정보 입력 태그  -->
+	<div class="w3-content mxw650" id="fr1">
+		<h1 class="w3-green w3-padding w3-center w3-card-4">정보 입력</h1>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-col w3-margin-top">
+				<label for="sid" class="w3-col m3 w3-right-align label1">아이디</label>
+				<div class="w3-col m7 pdl10">
+					<input type="text" name="id" id="sid" class="w3-input w3-border">
+				</div>
+			</div>
+			<div class="w3-col w3-margin-bottom mgt10">
+				<label for="spw" class="w3-col m3 w3-right-align label1">암호</label>
+				<div class="w3-col m7 pdl10">
+					<input type="password" name="pw" id="spw" class="w3-input w3-border">
+				</div>
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-half w3-orange w3-button" id="rbtn">reset</div>
+			<div class="w3-half w3-red w3-button" id="cbtn">confirm</div>
+		</div>
+	</div>
+	
+	<!-- 정보 확인 태그 -->
+	<div class="w3-content mxw650" id="fr2">
+		<h1 class="w3-green w3-padding w3-center w3-card-4">정보 확인</h1>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-col w3-margin-top">
+				<h3 class="w3-col m3 w3-right-align">아이디 :</h3>
+				<h3 class="w3-col m7 pdl10" id="pid"></h3>
+			</div>
+			<div class="w3-col w3-margin-bottom mgt10">
+				<h3 class="w3-col m3 w3-right-align">암호 :</h3>
+				<h3 class="w3-col m7 pdl10" id="ppw"></h3>
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-half w3-orange w3-button" id="bbtn">back</div>
+			<div class="w3-half w3-red w3-button" id="sbtn">submit</div>
+		</div>
+	</div>
+	
+	<!-- 데이터 전송 태그 -->
+	<form method="GET" action="result.html" class="w3-content mxw650" name="frm" id="frm"></form>
+<!-- <script type="text/javascript" src="../js/day09/ex01.js"></script> -->
+</body>
+</html>

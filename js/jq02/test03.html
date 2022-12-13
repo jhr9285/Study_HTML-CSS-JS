@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<style type="text/css">
+	#preView {
+		display: none;
+	}
+
+</style>
+<script type="text/javascript">
+	var cnt = 1;
+	$(document).ready(function(){
+/*		$('#file').change(function(evt){  // 이벤트를 입력해서 불러오겠다는 것은 파일에 대한 내용도 이벤트 안에 들어가 있다는 뜻.
+			// 선택한 파일 읽어오기
+			
+			// var sfile = $(this).val(); (이렇게 하면 안돼요~!)
+			// alert(sfile);
+			// alert으로 띄워보면 'C:\fakepath\~~.jpg'라고 뜬다.
+			// 보안상의 이유로 fakepath라는 가짜 경로가 뜬다.
+			// 전송할 때는 이미지 이름만 전송된다. (type="file" 의 특징)
+			
+			// 화면 보이기
+			$('#preView').stop().slideUp(500, function(){
+			var path = URL.createObjectURL(evt.target.files[0]);
+			// URL = URL 객체, createObjectURL = 객체의 경로를 만드는 함수 (자바스크립트 코드고, 이건 제이쿼리 코드로 쓸 수 없다.)
+			$('#image1').attr('src', path);
+			$('#preView').slideDown(1000);
+			//$('#preView').css('display', 'block');
+			});
+			
+			
+		// Q. 연구과제(?)
+		// 파일 태그(input type="file")가 선택이 끝나면 새로운 비어있는 파일 태그를 추가해주는 기능 구현 방법
+			
+		// 내가 한 것... 재귀호출함수도 생각해봤고 change 안에 change 함수 새로 넣는 것도 생각해봤지만 오류 떠서 지움 ㅠㅠ
+			var newFile = $('#area').clone(false);	
+			$('#area').append(newFile);
+ 			$(newFile).find('input').attr('id', 'file2');
+			var newPv = $('#preView').clone(false);
+			$(newPv).attr('id', 'preView2');
+			$(newPv).find('img').attr('id', 'image2');
+			$('#area').append(newPv);  
+		});
+*/	
+	
+
+	// 선생님 버전
+		$('#filefr').on('change', '.file', function(evt){
+			var sfile = $(this).val();
+			if(!sfile){
+				// 선택 취소 되었을 때
+				var sid = $(this).attr('id');
+				sid = sid.substring(4);
+				$('#file' + sid).remove();
+				$('#image' + sid).parent().parent().remove();
+				return;
+			}
+			var no = cnt; // id 번호 다르게 하기 위한 숫자 변수
+			var path = URL.createObjectURL(evt.target.files[0]);
+			$('#preView').stop().slideUp(500, function(){
+				addTag(path, no);
+				$('#preView').slideDown(500);
+			});
+			$('#filefr').append('<input type="file" name="file" id="file' + ++cnt + '" class="w3-input w3-border mgt10 file" placeholder="이미지 파일 선택!">');
+		});
+		
+		function addTag(path, no){
+			var tag = '<div class="inblock box100 w3-border mgl10 mgb10 w3-card-4">' 
+					+ '<div class="w3-col w3-border imgbox mgl10 mgt10">' 
+					+ '<img class="img1" id="image' + no + '" src="' + path + '">' 
+					+ '</div>' 
+					+ '</div>';
+			$('#imgfr').append(tag);
+		}
+	});
+
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600">
+		<h1 class="w3-yellow w3-padding w3-center w3-card-4">게시글 쓰기</h1>
+		<form method="POST" action="#" name="frm" id="frm"
+				class="w3-col w3-padding w3-card-4" encType="multipart/form-data">
+			<div class="w3-col mgt10">
+				<label for="name" class="w3-col m2 w3-right-align label1">작성자 : </label>
+				<div class="w3-col m8 pdl10">
+					<input type="text" name="name" id="name" placeholder="작성자 이름 입력"
+							class="w3-input w3-border">
+				</div>
+			</div>
+				<div class="w3-col mgt10 w3-margin-bottom">
+					<label for="file" class="w3-col m2 w3-right-align label1">업로드 : </label>
+					<div class="w3-col m8 pdl10" id="filefr">
+						<input type="file" name="file" id="file1" placeholder="이미지 파일 선택"
+								class="w3-input w3-border file">
+					</div>
+				</div>
+				<div class="w3-col mgt10 w3-margin-bottom" id="preView">
+					<label class="w3-col m2 w3-right-align label1">미리보기 : </label>
+					<div class="w3-col m8 pdl10 w3-center" id="imgfr">
+					<!--	<div class="inblock box100 w3-border w3-card-4">
+							<div class="w3-col imgbox w3-border mgl10 mgt10">
+								<img class="img1" id="image1" src="">
+							</div>
+						</div> -->
+					</div>
+				</div>
+			
+		</form>
+		
+		<div class="w3-col w3-card-4 w3-margin-top">
+			<div class="w3-half w3-button w3-purple w3-hover-pink" id="rbtn">reset</div>	
+			<div class="w3-half w3-button w3-blue w3-hover-aqua" id="sbtn">작성하기</div>	
+		</div>
+	</div>
+</body>
+</html>

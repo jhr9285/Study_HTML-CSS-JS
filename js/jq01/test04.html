@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	var idx = 0;
+	function getNum(){
+		var no = idx + 1;
+		idx = idx + 1;
+		return no;
+	}
+	$(document).ready(function(){
+		$('.box100').addClass('w3-border');
+		$('.w160').html('w160');
+		
+		$('.box100:nth-child(4)').removeClass('inblock box100').addClass('w3-col w3-border w3-red');
+		$('.box100:nth-child(7)').removeClass('inblock box100').addClass('w3-col w3-border w3-blue');
+		
+		/* h1 다음에 있는 div 태그 하위의 모든 div 태그에 각자 다른 ID를 부여하시오. */
+ 		/*
+		var tmp = [];
+		for(var i = 0; i < 12; i++){
+			tmp[i] = 'div' + (i + 1);
+			if(i < 7){
+				$('h1+div').find('div').attr('id', tmp[i]);	
+			}
+			if(i >= 7){
+				$('h1+div>div').find('div').attr('id', tmp[i]);
+			}
+		}
+		*/
+		
+		var el = $('.w3-content > div div');
+		for(var i = 0 ; i < el.length ; i++ ){
+			el.eq(i).attr('id', 'div' + getNum());
+		}
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw700">
+		<h1 class="w3-pink w3-padding w3-center w3-card-4">태그 선택 연습</h1>
+		<div class="w3-col">
+			<div class="inblock box100"></div>
+			<div class="inblock box100"></div>
+			<div class="inblock box100"></div>
+			<div class="inblock box100">
+				<div class="inblock w160"></div>
+				<div class="inblock w160"></div>
+			</div>
+			<div class="inblock box100"></div>
+			<div class="inblock box100"></div>
+			<div class="inblock box100">
+				<div class="inblock w160"></div>
+				<div class="inblock box100"></div>
+				<div class="inblock w160"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

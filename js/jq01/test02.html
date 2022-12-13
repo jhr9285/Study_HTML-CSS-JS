@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.box100').addClass('w3-border');
+		
+		$('div.box100').first().addClass('w3-purple'); // div 태그이면서 클래스가 box100 인 것들 중 첫번째
+		$('div.box100:first').addClass('w3-text-lime'); // div 태그이면서 클래스가 box100 인 것들 중 첫번째
+		$('.box100:first-child').addClass('w3-text-blue'); // 형제 중 첫째인, 클래스 box100인 것
+		$('.box100:odd').css('font-size', '14pt'); // 인덱스 기준 홀수번째 선택 (일반 숫자 기준으로는 짝수번째 선택)
+		$('.box100:nth-last-of-type(2)').addClass('w3-pink'); // 형제 중 마지막에서 두번째인, box100 클래스인 것
+		$('.box100:hidden').css('display', 'inline-block'); // 제이쿼리에서는 css 함수로 스타일 적용 가능
+		$('.box100:contains("span")').addClass('w3-green'); // box100 클래스인 것들 중 텍스트 span을 포함하는 것만 선택
+		$('.w3-content > *').eq(1).contents().addClass('w3-card-4'); // w3-content 요소의 자식 태그 모두를 선택하고, 그 중 인덱스가 1인 태그 선택, contents() 함수로 그 태그 하위 모든 태그 선택
+		$('.w3-content > *').filter('.w3-orange').addClass('w3-card-4'); // w3-content 요소의 자식 태그 모두를 선택하고, filter 기능으로 그 중 클래스가 w3-orange인 태그 선택
+		$('.w3-content').find('.box100').removeClass('w3-card-4'); // w3-content 요소의 하위 요소 중 클래스가 box100인 요소 모두 선택, w3-card-4 클래스 제거
+		$('.w3-content').children().eq(1).find('span').addClass('w3-card-4'); // w3-content 요소의 자식 태그 모두 선택하고, 그 중 인덱스가 1인 태그 선택, 그 태그 하위에서 span인 태그 선택
+		$('.w3-content').children().eq(1).find('span').closest('div').addClass('w3-border w3-padding'); // span 태그에서 가장 가까운 상위 태그 선택
+		
+		var el = $('span'); // 제이쿼리 객체
+		var txt = el.get(1).innerHTML; 
+		// el 객체 안에 innerHTML 속성이 있느냐? 없음. 제이쿼리에는 함수만 있음.
+		// get() 함수를 사용하면 제이쿼리 객체를 자바스크립트 객체로 바꿀 수 있다.
+		// get()은 인덱스 함수라서 괄호 안에 인덱스를 써야 함.
+		
+		var el1 = $('.w3-content').children().eq(1).find('div').eq(2);
+		el1.removeClass('w3-border').css('border', '20px solid black');
+		el1.end().removeClass('w3-purple w3-pink').addClass('w3-red');
+//		$('.w3-content').children().eq(1).find('div').eq(2).end().removeClass('w3-purple w3-pink').addClass('w3-red');
+		// end() : 마지막 필터링(조건)이 일어나기 이전의 값을 도출하는 함수
+		
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw650 w3-center">
+		<h1 class="w3-orange w3-padding">선택자</h1>
+		<div class="w3-col w3-margin-top">
+			<span class="inblock box100" id="sp">span</span>
+			<div class="inblock box100" style="display: none;">div-h</div>
+			<div class="inblock box100">div</div>
+			<div class="inblock box100">div</div>
+			<div class="inblock box100" style="display: none;">div-h</div>
+			<div class="inblock box100">div</div>
+			<div class="inblock box100">div</div>
+			<span class="inblock box100">span2</span>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	// ready 함수 : 위쪽 script 태그에서 body 태그 내용을 갖다 쓸 수 있게 해준다. 
+	//              body 먼저 완성시킨 다음에 ready 함수의 내용이 기능한다.
+	//              ready 함수를 쓰지 않고 바로 body 태그를 선택해서 제이쿼리로 코드 입력하면 적용X. (body 태그 먼저 돌지 않기 때문)
+	$(document).ready(function(){
+		var txt = $('#title').html();
+//		alert(txt);
+		txt = $('#title').text();
+//		alert(txt);
+
+		var tclass = $('#title').attr('class'); // id = title 인 태그의 클래스 속성값 모두 반환
+//		alert(tclass);
+		$('#title').attr('class', tclass + ' w3-card-4'); // 클래스값 앞에 띄어쓰기 꼭 명심!!
+
+//		id = o1 인 태그가 selected 되게 하기
+//		$('#o1').attr('selected', 'selected'); //attr에서는 selected 같은 단독 사용 속성도 selected="selected" 로 입력되게 해야 제대로 기능한다.
+		$('#o1').prop('selected', true);
+		
+//		성별이 선택됐을 때 선택한 성별을 읽어보시오.
+		$('#gen').change(function(){
+			var txt = $(this).val(); // '이것'의 value를 읽는다.
+//			alert(txt);
+
+			
+//		selected 속성이 해당 태그에 들어있는지 체크	
+		var result = $('#gen > option').select().prop('selected'); // 동적 이벤트 추가 안해서 실제 완성본에 변경 적용 되지 않음
+//		var result = $('#gen > option').select().attr('selected');
+		alert(result);
+			
+		});	
+		
+//		아이디 입력 태그에 required 속성이 있는지 없는지 체크
+		var result = $('#id').prop('required'); // 반환값 : true or false
+//		alert(result);
+		
+		
+//		$('#id').val('chopa'); // 개발자도구에서 안 보임
+//		document.getElementById('id').value = 'chopa'; // 개발자도구에서 안 보임
+		$('#id').attr('value', 'chopa'); // 이렇게 입력하면 개발자도구에서 input 태그에 value 속성,속성값 추가된 것 보임
+//		alert($('#id').val());
+		alert($('#id').attr('value'));
+
+		// 타이틀 클릭하면 버튼을 fr 태그에 추가
+		$('#title').click(function(){
+			$('#fr').append('<div class="w160 w3-button w3-blue btn">btn</div>')
+		});
+		
+		$('#fr').on('click', '.btn', function(){ // #fr인 태그를 감시해서 on 뒤 내용이 이루어질 때 그걸 완성본에 넣는다 (동적 이벤트 추가)
+//			$(this).removeClass('w3-blue').addClass('w3-pink');
+			$(this).toggleClass('w3-blue w3-pink'); // 한번 누르면 핑크 되고 다시 핑크 누르면 블루 됨 
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600">
+		<h1 class="w3-red w3-padding w3-center w3-text-align" id="title">속성 제어 함수</h1>
+		<div class="w3-col w3-margin-top" id="fr">
+			<input type="text" name="id" id="id" placeholder="아이디 입력!" required
+					class="w3-col w3-input w3-border w3-margin-bottom">
+			<select name="gen" id="gen" class="w3-select w3-border">
+				<option value="M" id="o2">남자</option>
+				<option value="F" id="o3">여자</option>
+				<option id="o1">#성별 선택#</option>
+			</select>
+		</div>
+	</div>
+</body>
+</html>

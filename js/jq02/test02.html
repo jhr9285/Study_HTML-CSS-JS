@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+	// .before() 
+		$('#fr1').before('<h1 class="w3-col w3-pink w3-padding w3-card-4 w3-center">태그 편집</h1>');
+	// .after()
+		$('#d1').after('<div class="w3-col w3-border mgt10" id="d2">div2</div>');
+	
+	// Q. 아이디가 fr1인 태그에 w3-center 클래스를 추가하시오.
+		$('#fr1').addClass('w3-center');
+		
+	// 아이디가 content인 태그의 맨 아래쪽에 hr 태그 넣기
+	//	$('#content').append('<hr>'); (body 태그의 모든 태그들이 float로 띄워져 있어서 화면에서는 맨 위에 hr 생김)
+		
+ 		var tmpTag = document.createElement('hr'); // 자바스크립트 객체
+ 	//	$(tmpTag.css('clear', 'left');
+		$(tmpTag).addClass('w3-col w3-margin-top'); // 제이쿼리 객체로 변환
+		$('#content').append(tmpTag); 
+		
+	// 아이디가 fr1인 태그에 div 태그를 마지막에 추가하기 (appendTo 사용)
+		$('<div class="w3-col w3-border mgt10" id="d3">div3</div>').appendTo('#fr1');
+	
+	// 아이디가 fr1인 태그 최상단에 h3 태그 추가하기 (prepend 사용)
+	//	$('#fr1').prepend('<h3 class="w3-blue">fr1 태그</h3>')  // prepend 
+		$('<h3 class="w3-blue">fr1 태그</h3>').prependTo('#fr1');  // prependTo
+		
+	//	$('#d1').insertBefore('<h5 class="w3-green">insertBefore</h5>'); // 확인 필요 (안 먹음)
+	//	$('#d1').insertAfter('<h5 class="w3-green">insertAfter</h5>'); // 확인 필요 (안 먹음)
+		
+	// 아이디가 fr1인 태그 복사하기
+		var el = $('#fr1').clone(false); // 확인 필요 (false가 제대로 안 먹음)
+		el.attr('id', 'fr2');
+		$('#content').append(el);
+		
+	//	alert($('#fr2').html());
+		
+	// Q. 아이디가 fr2인 태그의 자식태그 중 첫번째 h3 태그의 내용을 fr2 태그로 바꾸시오.
+	//	$('#fr2 > h3').html('fr2 태그');
+		$('#fr2').find('h3').html('fr2 태그');
+	//	$('h3:contains("fr1 태그")').eq(1).html("fr2 태그");
+	
+	// 아이디가 fr2인 태그의 자식 태그 중 h3 태그를 h5 태그로 교체
+	//	$('#fr2').find('h3').replaceAll('<h5 class="w3-purple">fr2 태그</h5>'); 
+	//	$('#fr2').find('h3').replaceWith('<h5 class="w3-purple">fr2 태그</h5>'); // 태그부터 스타일, 텍스트 모두 넣어야 된다.
+		$('<h6>').replaceAll($('#fr2').find('h3')); // 태그만 바꿀 때 : 앞에 바꿔 적용할 태그 적고, 뒤에 바꾸려는 대상 태그를 넣는다. 근데 이거.. 내용 다 지우고 h6 태그만 남는데?
+		
+				
+		var tag1 = $('#fr2').clone();
+		tag1.attr('id', 'fr3');
+		tag1.find('h6').html('fr3 태그');
+		$('#content').append(tag1);
+		
+	// 아이디가 fr2인 태그의 하위 태그를 모두 각각 감싸는 태그 만들기
+		$('#fr2 > *').wrap('<div>'); // 하위 태그를 모두 각각 div로 새로 감싼다.
+		
+	// 아이디가 fr3인 태그의 하위 태그를 모두 하나로 감싸는 태그 만들기
+	//	$('#fr3 > *').wrapAll('<div>') 
+	
+	// 아이디가 fr3인 태그의 하위 태그 중 h6 제외하고 모두 하나로 감싸는 태그 만들기
+	//	$('#fr3 > *:not("h6")').wrapAll('<div>')
+	//	$('#fr3 > div').wrapAll('<div>');
+	//	$('#fr3').find('div').wrapAll('<div>');
+		$('#fr3').find('h6').nextAll().wrapAll('<section>');
+		
+	// 아이디가 fr3인 태그의 하위 태그의 하위 태그를 텍스트 크기 작게 만들기.
+	//	$('#fr3').find('section').find('div').wrapInner('<small>');
+		$('#fr3 > section > div').wrapInner('<small>');
+	// small 태그의 내용을 볼드처리하기.	
+		$('small').wrapInner('<strong>');
+				
+	// 아이디가 fr2인 태그 내용 모두 지우기
+	//	$('#fr2').html('');
+	//	$('#fr2').empty();
+		
+	// 아이디가 fr2인 태그 삭제
+	//	$('#fr2').remove();
+	
+	
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600" id="content">
+		<div class="w3-col w3-margin-top w3-padding w3-card-4" id="fr1">
+			<div class="w3-col w3-border" id="d1">div1</div>
+		</div>
+	</div>
+</body>
+</html>

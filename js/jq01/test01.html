@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+//	jQuery(function(){ // $ = jQuery 동일
+		// login 클릭 이벤트
+//		$('#lbtn').click(function(){
+//			alert($('#sid').val() + ' - ' + $('#spw').val());
+//		});
+//	});
+/* 
+	jQuery 사용 방법 :
+		1. 소스 코드를 페이지에 추가한다.
+		2. script 태그에서 
+			$(document).ready(function(){
+				~코드 작성 부분~
+			});
+			라고 입력한다. (권장 표기법)
+			
+			*아래 두 코드는 동일한 기능!
+			$(document).ready(function(){});
+			==> $(function(){});
+*/
+	$(document).ready(function(){ // ready = onload와 동일한 기능
+		$('#lbtn').click(function(){
+			alert($(document.frm.id).val() + ' - ' + $(frm.pw).val());
+		});
+		
+		$('#rbtn').click(function(){
+			$(document.getElementById('frm')).get(0).reset();
+		});
+	});
+	
+	
+</script>
+<style type="text/css">
+	html, body {
+		margin: 0px;
+		height: 100%;
+	}
+</style>
+</head>
+<body class="w3-display-container">
+	<div class="w3-content mxw650" id="fr1">
+		<h1 class="w3-green w3-padding w3-center w3-card-4">정보 입력</h1>
+		
+		<form method="GET" action="result.html" name="frm" id="frm" class="w3-col">
+			<div class="w3-col w3-margin-top w3-card-4">
+				<div class="w3-col w3-margin-top">
+					<label for="id" class="w3-col m3 w3-right-align label1">아이디</label>
+					<div class="w3-col m7 pdl10">
+						<input type="text" name="id" id="id" class="w3-input w3-border">
+					</div>
+				</div>
+				<div class="w3-col w3-margin-bottom mgt10">
+					<label for="pw" class="w3-col m3 w3-right-align label1">비밀번호</label>
+					<div class="w3-col m7 pdl10">
+						<input type="password" name="pw" id="pw" class="w3-input w3-border">
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-half w3-orange w3-button" id="rbtn">reset</div>
+			<div class="w3-half w3-red w3-button" id="lbtn">login</div>
+		</div>
+	</div>
+</body>
+</html>
