@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시글 작성</title>
+<style type="text/css">
+
+	label {
+		display: block; /* label 태그는 인라인태그. 블록 속성으로 변경. */
+	}	
+	
+	#title, #body {
+		width: 100%;
+	}
+	
+</style>
+
+</head>
+<body>
+	<div style="width: 600px; margin: 0px auto;">
+		<h1 style="background-color: crimson; color: white; padding: 10px; text-align: center;">글 작성</h1>
+		
+		<!-- 글이 2,048자 초과할 가능성이 높으므로 post 방식으로 진행 -->
+		<form method="post" action="test04.html" name="frm" id="frm" class="frm">
+			<input type="hidden" name="id" id="id" value="lupy"> <!-- 화면에는 안 보이지만 전송은 되는 태그 -->
+			
+			<div>
+				<label for="title">제목 :</label>
+				<input type="text" name="title" id="title" placeholder="제목을 입력하세요." required>
+			</div>
+
+			<div>
+				<label for="body">내용 :</label>
+				<textarea cols="50" rows="10" name="body" id="body"
+							style="resize: none;" required placeholder="내용을 입력하세요." required></textarea>
+			</div>			
+			
+			<!-- 
+				textarea 태그 - 속성 : cols, rows, name, id
+				cols : 열의 수, rows : 행의 수
+				웹페이지에서 사이즈 조정이 가능한데, 이걸 막으려면 style="resize: none;" 입력
+				줄바꿈도 그대로 전송됨. (공백 한 칸으로 뭉개지지 않음)
+			 -->
+			
+			<div style="margin-top: 20px; text-align: center;">
+			<!-- reset 이나 submit 은 전송하는 기능을 할 뿐, 전송해야 하는 데이터를 담는 속성이 아님. 그래서 name 안 씀. -->
+				<input type="reset" class="btn" value="reset">
+				<input type="submit" class="btn" value="글작성">
+			</div>
+			
+		</form>
+	</div>
+
+</body>
+</html>

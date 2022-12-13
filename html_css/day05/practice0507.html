@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Practice 0507</title>
+</head>
+<body>
+
+	<form method="post" action="practice0504.html" name="frm" id="frm">
+		<label>file :</label>
+		<input type="file" name="file" id="file" src="../img/cheese_cat.jpg"><br>
+		<label>date :</label>
+		<input type="date" name="date" id="date"><br>
+		
+		<label>과목 :</label><br>
+			<div style="padding: 10px;">
+			<input type="checkbox" name="ch" id="ch" value="java">
+				<label for="ch">java</label><br>
+			<input type="checkbox" name="db" id="db" value="db">	
+				<label for="db">db</label><br>
+			<input type="checkbox" name="html" id="html" value="html">	
+				<label for="html">html</label><br>
+			</div>
+			
+		<label>수업 요일 :</label>	
+		<select name="day" id="day">
+			<option selected>요일 선택</option>
+			<option value="mon">월요일</option>
+			<option value="tue">화요일</option>
+			<option value="wed">수요일</option>
+			<option value="thu">목요일</option>
+			<option value="fir">금요일</option>
+		</select><br>
+		
+		<input type="submit" name="sbtn" value="제출" style="margin-top: 20px;">
+		
+	</form>
+
+</body>
+</html>

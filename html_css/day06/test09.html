@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구조 선택자</title>
+<style type="text/css">
+	li > a:first-child {/* li 태그의 자식 태그인 a 태그의 first-child에만 속성 적용 */
+		color: red;
+	}
+	li:first-child > a {/* li 태그의 first-child 의 a태그에만 속성 적용 */
+		color: dodgerblue;
+		font-weight: bold;
+	}
+</style>
+
+</head>
+<body>
+	<ul> <!-- ul태그 : 부모 / li 태그 : 자식 -->
+		<li><a>a태그 1</a></li> <!-- li 태그 : 부모 / a 태그 : 자식 -->
+		<li><a>a태그 2</a></li>
+		<li><a>a태그 3</a></li>
+		<li><a>a태그 4</a></li>
+		<li><a>a태그 5</a></li>
+	</ul>
+</body>
+</html>

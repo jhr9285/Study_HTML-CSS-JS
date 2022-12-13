@@ -1,0 +1,7 @@
+
+/* 이 파일은 html 문서의 style 태그의 내용을 외부 파일로 작성한 것.
+   작성방법은 stlye 태그 작성 방법과 동일함. */
+p {
+	color: green;
+	background-color: yellow;
+}
