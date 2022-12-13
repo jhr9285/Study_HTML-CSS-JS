@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 	
+ 	키보드로 입력 받는 방법
+		[window.]prompt('메세지'); 
+		
+	키보드로 입력받은 데이터를 문자열로 반환해준다.
+	따라서 숫자의 경우, 해당 타입으로 변환된다.
+	
+	숫자형태의 문자열을 정수로 변환하는 방법
+		parseInt(문자열);
+ */
+ 
+ 	var sno = prompt('정수 입력 : ');
+ //	alert(typeof sno); 
+ 	document.write('sno : ' + sno + '<br>');
+ 	
+ 	var result1 = sno + 1;
+ 	document.write('sno + 1 : ' + result1 + '<br>');
+ 	
+ 	// 문자열을 정수로 변환
+ 	var no1 = parseInt(sno);
+ 	
+ 	var result2 = no1 + 1;
+ 	document.write('no1 + 1 : ' + result2 + '<br>');
+// 	alert(typeof no1) 
+	document.write('no1 - 5 : ' + (no1 - 5) + '<br>');
+	// ( no1 - 5 ) 를 소괄호로 묶는 이유는, 묶지 않으면 ( 'no1 - 5 : ' + no1 ) 이 먼저 진행되기 때문.
+	// 저 결과값은 문자열이므로 뒤의 '- 5 (숫자 연산)'가 성립되지 않음. 에러 발생함.
+	document.write('no1 * 2 : ' + no1 * 2 + '<br>');
+	// 곱하기는 사칙연산 중 우선적용되는 연산자라서 괄호 하지 않아도 적용은 잘 됨. 그러나 가급적 괄호 치기.
+	document.write('no1 / 3 : ' + (no1 / 3) + '<br>');
+	document.write('no1 % 3 : ' + (no1 % 3) + '<br>');
+	
+	// 증감연산자
+	// 증감연산자로 사용하는 기호 이후에 나오는 변수에 +1 또는 -1을 딱 한번 해준다.
+	
+	++result2; // ==> 12 (10 입력 시)
+	document.write('++result2 : ' + result2++ + '<br>'); // ==> 12 (result2 뒤의 ++은 해당 태그에서 적용되지 않고 다음 태그에 적용됨)
+	document.write('result2++ : ' + result2 + '<br>'); // ==> 13
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

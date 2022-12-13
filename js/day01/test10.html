@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type = "text/javascript">
+	//전역변수
+	var num = 44;
+	
+	//globCar = 999; 가 호이스팅으로 인해 여기로 끌려옴. 그래서 첫 번째 결과로 나타남.
+	
+	function func01(){// {} : 함수 블럭, 함수가 실행해야 할 코드가 작성되는 부분
+		var loclVar; //지역변수 (함수 내에서 만들어지는 var 키워드가 붙은 변수 - 함수 내에서만 사용 가능)
+		globVar = 999; // 전역변수 (함수 내에서 만들어지는 var 키워드가 안 붙은 변수 - 함수 밖에서도 사용 가능)
+		locVar = 10; // 두 번째 결과로 나타남.
+	}
+	
+	/* 
+		함수는 스스로 저절로 호출되는 경우는 없다.
+		반드시 어디선가 호출해줘야 실행된다.
+	*/
+	
+	/*  alert(globVar); */ // 함수 호출이 안 됐기 때문에 접근할 수 없는 변수
+	
+	func01(); // func01 호출. : 함수의 ({} 내의) 내용을 실행하라는 의미
+	alert('globVar : ' + globVar); // 에러 없어서 나타나지 않음
+	alert('locVar : ' + locVar); // 세 번째 결과로 나타남. 접근 불가능한 변수이므로 에러 발생 (지역변수이기 때문) 
+
+</script>
+</head>
+<body>
+<script type = "text/javascript">
+	alert('num : ' + num);
+</script>
+</body>
+</html>

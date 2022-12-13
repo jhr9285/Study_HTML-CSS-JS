@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	ex03)
+		'[도서리뷰]모던 웹을 위한 JavaScript + jQuery 입문(3판)'
+		이라는 문자열을 변수에 기억시키고
+		새로운 변수에, 위 변수에 기억된 내용을 거꾸로 꺼내서 채워주세요.
+		그리고 출력하세요.
+		
+	순서)
+	1. 변수에 문자열 담는다.
+	2. 새로운 변수 만든다.
+	3. 문자열의 길이를 알아낸다.
+	4. 뒤에서부터 꺼내서 누적시켜준다.
+	5. 출력한다.
+*/
+	
+	
+	var arr = '[도서리뷰]모던 웹을 위한 JavaScript + jQuery 입문(3판)';
+	
+	var rra = [];
+	
+	for(i = 0; i < arr.length; i++){
+		rra[i] = arr[arr.length - 1 - i];
+		
+		document.write(rra[i]);
+	}
+	
+	
+
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

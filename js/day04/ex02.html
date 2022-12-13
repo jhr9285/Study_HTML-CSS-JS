@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript">
+/* 
+	5자리 숫자를 입력받아서
+	각 자리의 숫자를 기억하는 배열에 기억시키고
+	각 자리수의 합을 출력해주는 프로그램을 작성하세요.
+	
+	예)
+		12345
+		[1, 2, 3, 4, 5] 만들고
+		합 : 15
+*/
+	// 선생님 버전
+	
+	// (1) 함수 만들지 않는 방법
+	var str = prompt('다섯자리 정수 입력 : '); // 다섯자리 숫자 입력받아서 문자열로 반환
+	var nums = []; // 한자리 숫자 다섯개 기억할 배열
+	for(var i = 0; i < str.length; i++){ // 문자열은 배열
+		var sno = str[i]; // 문자열 각 자릿수를 인덱스로 추출해서 새 변수 sno에 담고
+		var no = parseInt(sno); // sno 숫자 1자리를 새 변수 no에 담고
+		nums[i] = no; // 만들 배열의 i번째 인덱스에 no값을 0부터 4까지 순서대로 대입
+	}				  // ==> ex) 12345를 1, 2, 3, 4, 5 각각으로 대입하면 nums[0]=1, nums[1]=2, ... , nums[4]=5	
+	var sum = 0;
+	for(var i = 0; i < nums.length; i++){
+		sum += nums[i]; // sum = sum + nums[i]; 와 동일
+	}
+	document.write('입력받은 숫자 : ' + str + '<br>');
+	document.write('각 자리 숫자 합계 : ' + sum + '<br>');
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

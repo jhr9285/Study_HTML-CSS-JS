@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*  
+ 	변수 만드는 방법 1 ]
+ 		var 	변수이름;	---> 변수 선언
+ 		변수이름 = 데이터;	---> 변수 초기화
+ 		
+ 	병수 만드는 방법 2 ]
+ 		var 	변수이름 = 데이터; --> 변수 선언과 동시에 초기화
+ 		
+ 	참고 ]
+ 		자바스크립트에서는 변수를 만들때 
+ 		var 라는 키워드를 생략해줘도 만들 수 있다.
+ */
+	var no1 = 10; // 변수 선언과 초기화를 동시에...
+	no2 = 100;
+	var no3;
+	no3 = null;
+	alert('no1 : ' + no1);
+	alert('no2 : ' + no2);
+	alert('no3 : ' + no3);
+	
+	var a, b, c=10; // c만 선언과 초기화가 동시에 이루어진 것이고, a와 b는 선언만 된 상태.
+	/* 
+		위 내용은 아래와 동일함.
+			var a;
+			var b;
+			var c = 10;
+	*/
+	alert('a : ' + a + '\nb : ' + b + '\nc : ' + c);
+</script>
+</head>
+<body>
+
+</body>
+</html>

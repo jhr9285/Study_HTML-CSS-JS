@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	ex07)
+		3 ~ 100 사이의 숫자를 입력받아서
+		그 숫자가 소수인지 아닌지를 판별해서 출력하세요.
+		
+		참고)
+			소수 : 1과 자기자신 이외에 나눌 수 있는 수가 없는 수
+*/
+
+	// 선생님 버전
+	
+	var no = parseInt(prompt('3~100 사이의 정수 : '));
+	var result = '소수입니다.';
+	
+	// 2 이상의 어떠한 수로도 한번 이상 나누어 떨어지는 순간 소수가 아닌 결과로 판별이 난다.
+	for(var i = 2; i < no; i++){
+		if(no % i == 0){
+			result = '소수가 아닙니다.';
+		}	
+	}
+	
+	var color = result == '소수입니다.' ? 'w3-blue' : 'w3-red';
+	
+	document.write('<h3 class="' + color + ' w3-center">입력한 정수 ' + no + ' 는 ' + result + '</h3>');
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

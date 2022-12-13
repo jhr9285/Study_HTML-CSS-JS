@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3 style="text-align: center;" id="txt"></h3>
+	<input type="text" name="id" id="id"> 
+	<input type="button" id="btn" value="setting">
+<script type="text/javascript" src="../js/day01/test06.js"></script>
+<script type="text/javascript">
+	// 클릭이벤트 
+	document.getElementById('btn').onclick = function(){
+		// 태그 선택해서
+		var el = document.getElementById('id');
+		// 태그의 입력내용을 수정
+		el.value = 'boa hankok!'; // 버튼을 누르면 id input 창에 value가 boa hankok으로 뜬다.
+	};
+	
+</script>
+</body>
+</html>

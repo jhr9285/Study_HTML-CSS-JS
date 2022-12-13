@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	ex01)
+		1~n까지의 곱을 구해서 반환해주는 함수 fact01을 만들고
+		숫자를 입력해서 실행한 결과를 출력하세요.
+		
+		참고)
+			팩토리얼 : 1부터 n까지의 곱을 말한다.
+			기호 : n!
+*/
+	
+/* 	function fact01(no){
+		// 재귀호출함수로 팩토리얼 처리
+		if(no == 1){
+			return no;
+		}	
+		return no * fact01(no - 1);
+	}; */
+	
+	function fact02(no){
+		// 반복문으로 팩토리얼 처리
+		// 1. 결과값 변수 먼저 선언 및 초기화 (팩토리얼의 경우 1로 초기화한다. 0으로 하면 곱셈할 때 0으로 곱해서 값이 0이 되니까.)
+		var result = 1;
+		
+		// 2. 반복문으로 팩토리얼 기능 만들어서 결과값 변수에 적용
+		for(var i = 1; i < (no + 1); i++){
+			/* result = result * i; */
+			result *= i;
+		}
+		// 3. 결과값 반환
+		return result;
+	}
+	
+	function load01(){
+		document.getElementById('btn').onclick = function(){
+			var sno = document.getElementById('no').value;
+			var num = parseInt(sno);			
+			
+			/* var result = fact01(num); */
+			var result = fact02(num);
+			
+			document.getElementById('no').value = '';
+			document.getElementById('result').innerHTML =
+				'<span style="color: gray;">1부터 입력받은 숫자 '+ num + ' 까지의 곱은 ' + result + '이다.</span>';
+			document.getElementById('soo').innerHTML = num;
+			document.getElementById('resultFr').style.display = 'block';
+		};
+	}
+		// innerText, textContent 는 태그까지 모두 문자로 표현시킴
+		// innerHTML 은 태그는 태그 기능을 적용시켜서 적용시킴
+	
+</script>
+</head>
+<body onload="load01();">  <!-- onload 함수, body 태그의 내용을 불러온다. 위쪽 스크립트에서도 body 태그의 데이터를 쓸 수 있다. -->
+	<div class="w3-content mxw600 w3-center">
+		<h1 class="w3-amber w3-padding w3-card-4"><span id="soo">n</span>까지의 팩토리얼</h1>
+		<div class="w3-col w3-margin-top w3-card-4 w3-padding">
+			<div class="w3-col">
+				<div class="w3-col m2">
+					<label for="no">숫자 입력 : </label>
+				</div>
+				<div class="w3-col m9">
+					<input type="number" min="1" max="9999" name="no" id="no" class="w3-input w3-border mgl10">
+					<!-- input 태그가 number 타입일 때만 쓸 수 있는 속성 : min(최소값/하한선), max(최대값/상한선) -->
+				</div>
+			</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4">
+			<div class="w3-col w3-button w3-blue" id="btn">계산하기</div>
+		</div>
+		<div class="w3-col w3-margin-top w3-card-4" style="display: none;" id="resultFr">
+			<h3 class="w3-margin w3-text-blue" id="result"></h3>
+		</div>
+	</div>
+
+</body>
+</html>

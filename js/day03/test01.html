@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript">
+	function yeje(){
+		var txt = prompt('종료하려면 q 입력 : ');
+		if(txt == 'q'){
+			return; // '실행중인 이 함수를 즉시 종료하세요.'
+		}
+		document.write('<h1>함수에서 추가한 태그</h1>'); // q 입력하면 return 발동해서 즉시종료돼서 document~는 실행되지 않음
+		return; // 이후에 실행할 코드가 없으면 생략해도 무방함. 단, 반환값이 있을 때는 상관없이 반드시 입력해야 함.
+	}
+	// 함수는 누군가 호출하지 않으면 절대로 실행되지 않는다.
+/* 
+	함수 사용방법)
+		함수이름([ 데이터1, 데이터2, ... ]);
+		var 변수이름 = 함수이름([ 데이터1, 데이터2, ... ]);  <== 변수 선언과 초기화를 덧붙여서 함께 진행할 수 있음
+		
+	반환값이 있는 함수를 호출한다는 것은, 그 함수 실행의 반환값을 호출하는 지정 위치에 그대로 쓰겠다는 의미다.
+*/ 
+	yeje();
+		
+	// =============== //	
+
+	function func01(){
+		return 10;
+	}
+	
+	var data01 = func01();
+
+	// 위의 경우, 위 실행문은 [ var data01 = 10; ] 의 의미가 된다.
+
+
+
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

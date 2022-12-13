@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript">
+	/* 
+		실수(소수점이 있는 숫자)를 입력받아서
+		소수점 이하 셋째자리에서 반올림한 숫자를 출력하세요.
+		연산자와 parseInt()만 사용해서 처리하세요.
+		
+		참고)
+			소수 첫째자리에서 반올림
+			
+			var no = 3.14;
+			no = parseInt(no + 0.5);
+	*/
+	var num = prompt('소수점 있는 숫자 입력 : ');
+	var calc;
+	
+	calc = parseInt(num);
+	num = num % calc; 
+	
+	document.write(calc + '<br>');
+	document.write(num + '<br>');
+	
+	var calc1 = parseInt(num * 10);
+	num = (num * 10) % calc1;
+	
+	document.write(calc1 + '<br>');
+	document.write(num + '<br>');
+	
+	var calc2 = parseInt(num * 10);
+	num = (num * 10) % calc2;
+	
+	document.write(calc2 + '<br>');
+	document.write(num + '<br>');
+	
+	var calc3 = parseInt(num * 10);
+	num = (num * 10) % calc3;
+	
+	document.write(calc3 + '<br>');
+	document.write(num + '<br>');
+	
+	var calc4 = parseInt(num * 10);
+	num = (num * 10) % calc4;
+	
+	document.write(calc4 + '<br>');
+	document.write(num + '<br>');
+	
+	(calc4 >= 5) ? (calc3 += 1) : (calc3 -= 1);
+	
+	document.write('<h3>소수점 셋째자리에서 반올림한 숫자 : ' + calc + '.' + calc1 + calc2 + calc3 + '</h3>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	ex04)
+		1 - 2 + 3 - 4 + 5 - 6 + .......
+		순으로 계산했을 경우
+		결과값이 처음 100 이상의 숫자가 나오는 때는 몇 까지를 계산했을 때인지 출력하세요.
+		숫자와 결과값을 같이 표기하세요.
+	
+*/
+
+	var num = 0;
+	var sum = 0;
+	var sum1 = 0;
+	var sum2 = 0;
+
+	
+	for(i = 1; ; i++){ // 어디까지 반복해야 하는지 모를 때는 비워도 된다.
+		
+ 		if(i % 2 == 0){ // 2의 배수를 2n으로 표기하는 건 수학식에서만. 조건문에서는 '나머지가 0이다'로 표기!
+			sum1 -= i;
+		} else {
+			sum2 += i;
+		}	
+		sum = sum1 + sum2;
+		
+		if(sum >= 100){
+			num = i; // for문의 i는 무조건 지역변수이므로, for문 바깥에서 표시하려면 전역변수에 대입해야 한다. 
+			break;
+		}
+	}
+	
+	alert('결과값 : ' + sum);
+	alert('숫자 : ' + num);
+
+	
+	// 선생님 버전 (for() 안을 다 공백으로 둬도 되는지에 대한 변형버전)
+/* 
+	var gop = -1;
+	var sum = 0;
+	
+	var i = 1;
+	for(;;){
+		gop = gop * -1;
+		sum = sum + (gop * i);
+		if(sum >= 100){  // if 조건문의 블럭{} 내의 명령이 하나인 경우에는 {} 생략 가능. 그러나 쓰는 것을 습관으로 들이자.
+			break;
+		}
+		i++;
+	}
+	document.write(i + '까지 더했을 때 ' + sum);
+*/	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var str = prompt('이름 입력 : '); // prompt 함수는 취소하면 null 값 반환 (null은 객체임!)
+	var str2; // 데이터 타입 : undefined
+	alert(typeof (typeof str2));
+	if(!str){ // (= 데이터 입력 받을 줄 알았는데 입력되지 않아서 값이 없다)
+		      // typeof str == 'undefined' || typeof str == 'null'과 같은 의미) 
+		alert('이름 입력이 되지 않았습니다.');
+	}
+	
+	/* 
+		자바스크립트에서 조건식에 변수만 기술하는 경우
+		변수가 데이터를 기억하고 있으면 true,
+		null 이거나 undefined면 false로 해석한다.
+	*/
+</script>
+</head>
+<body>
+
+</body>
+</html>

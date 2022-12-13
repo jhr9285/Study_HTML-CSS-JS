@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>포지션 : 스태틱</title>
+<!--  (position: static; : 움직이지 못하는 포지션 속성값, 스크롤 영향은 받음, position 속성의 디폴트값) -->
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<style type="text/css">
+	.inblock {
+		position: static;
+		left: 200px; /* 영향 없음 */
+		bottom: 500px; /* 영향 없음 */
+	}
+	
+</style>
+</head>
+<body>
+	<div class="w3-content mxw650">
+		<h1 class="w3-col w3-blue w3-padding w3-margin-bottom">static position</h1>
+		<div class="w3-col">
+			<div class="inblock w3-purple" style="width: 200px; height: 200px;"></div>
+		</div>
+	</div>
+</body>
+</html>

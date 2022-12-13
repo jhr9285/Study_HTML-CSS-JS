@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	자바스크립트 중간과제 (최종X) :
+		
+		목표) 네 자리 숫자를 알아내시오.
+		
+		단서)
+			1. 네 자리 숫자 abcd는 0이 포함되지 않는다.
+			2. 첫 번째 숫자(a)는 마지막 숫자(d)보다 2가 크다.
+			3. 두 번째 숫자(b)는 세 번째 숫자(c)보다 크다.
+			4. 역순의 숫자와, 본래 숫자의 합은 16456이다.
+			5. a, b, c, d 중에는 같은 숫자가 없다.
+			
+		Tip : 조건문 , 반복문 사용
+*/
+
+	for(i = 1; i < 8; i++){ // i = d, a의 최대 숫자가 9이므로 d는 최대 숫자가 7이 됨
+		var d = i;
+		var a = d + 2;
+		for(j = 1; j < 10; j++){// j = b, b는 c보다는 크므로 최소 기준으로 2 이상
+			if(j == i || j == i + 2){
+				continue;
+			}
+			
+			for(k = 1; k < j; k++){ // k = c
+				if(k == i || k == i + 2){
+					continue;
+				}
+				
+				var b = j;
+				var c = k;
+				
+				var no1 = (a * 1000) + (b * 100) + (c * 10) + (d * 1);
+				var no2 = (d * 1000) + (c * 100) + (b * 10) + (a * 1);
+				
+				if(no1 + no2 == 16456){
+					document.write(a + '<br>');
+					document.write(b + '<br>');
+					document.write(c + '<br>');
+					document.write(d + '<br>');
+					document.write(no1 + '<br>');
+				}
+			}
+		}
+	}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

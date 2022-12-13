@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>별찍기(이중 for문 연습)</title>
+<script type="text/javascript">
+/*
+1.
+	*****
+	*****
+	*****
+	*****
+	*****
+	
+2. 
+	*
+	**
+	***
+	****
+	*****
+	
+3.      *
+       **
+      ***
+     ****
+    *****
+	
+4. 
+	*****
+	****
+	***
+	**
+	*
+	
+5. 
+	*****
+	 ****
+	  ***
+	   **
+	    *
+	  
+6.
+       *
+      ***
+     *****
+    *******
+   *********
+	
+	
+	
+*/
+
+/*
+for(var h = 0 ; h < 3 ; h++ ){ // 10개 행 출력
+for(var i = 0 ; i < 5 ; i++ ){// 한행 출력....
+	document.write('*');
+}
+document.write('<br>'); // 줄바꿈...
+}
+
+var str = '';
+for(var i = 0 ; i < 5 ; i++ ){
+	for(var j = 0 ; j < 5 ; j++ ){
+		str = str + '*';
+	}
+	str = str + '<br>';
+}
+
+document.write(str);
+*/
+
+	//(1)
+	document.write('<h4>1. </h4>');
+	for(var i = 0; i < 5; i++){
+		document.write('<pre>');
+		for(var j = 0; j < 5; j++){
+			document.write('*');
+		}
+		document.write('</pre>');
+	}
+	
+	//(2)
+	document.write('<h4>2. </h4>');
+	for(var k = 0; k < 5; k++){
+		document.write('<pre>');
+		for(var l = 0; l <= k; l++){
+			document.write('*');
+		}
+		document.write('</pre>');
+	}
+
+	//(3-1) 어려움!! (for문)
+	document.write('<h4>3-1. </h4>');
+	for(var o = 0; o < 5; o++){
+		document.write('<pre>');
+		for(var p = 0; p < 5 - (o + 1); p++){
+			document.write(' ');
+		} for(var p = 0; p < (o + 1); p++){
+			 document.write('*');
+		  }
+		document.write('</pre>');
+	}
+	
+	//(3-2) 어려움!! (if문)
+	document.write('<h4>3-2. </h4>');
+	for(var o = 0; o < 5; o++){
+		document.write('<pre>');
+		for(var p = 0; p < 5; p++){
+			var star = '*';
+			if(p < 5 - (o + 1)){
+				star = ' ';
+			} document.write(star);
+		}
+		document.write('</pre>');
+	}
+	
+	//(4)
+	document.write('<h4>4. </h4>');
+	for(var m = 0; m < 5; m++){
+		document.write('<pre>');
+		for(var n = 4; n >= m; n--){
+			document.write('*');
+		}
+		document.write('</pre>');
+	}
+	
+	//(5)
+	document.write('<h4>5. </h4>');
+	for(var q = 0; q < 5; q++){
+		document.write('<pre>');
+		for(var r = 0; r < q; r++){
+			document.write(' ');
+		} for(var r = 0; r < (5 - q); r++){
+			document.write('*');
+		}
+		document.write('</pre>');
+	}
+	
+	//(6) 어려움!!
+	document.write('<h4>6. </h4>');
+	for(var s = 0; s < 5; s++){
+		document.write('<pre>');
+		for(var t = 0; t < (5+s); t++){
+			var star = '*';
+			if(t < 5 - (s+1)){
+				star = ' ';
+			} else {
+			star = '*';
+			}
+			document.write(star);
+		}
+		document.write('</pre>');
+	}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

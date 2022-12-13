@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/w3color.js"></script>
+</head>
+<body>
+	<div class="w3-content mxw650 w3-center">
+		<h1 class="w3-amber w3-padding w3-card-4">칼라버튼</h1>
+		<div class="w3-margin-top w3-padding" id="fr"></div>
+	</div>
+
+<script type="text/javascript">
+/* 
+	colorList의 첫번째 데이터 출력
+	alert(colorList[0]);
+*/
+	// 배열을 변수에 기억 (list 변수 안 만들고 colorList 변수를 그대로 for 반복문에 사용해도 된다.)
+	var list = colorList;  
+	// 배열의 갯수만큼 반복한다. (길이는 항상 인덱스보다 1 크므로, 배열의 총 길이가 인덱스 마지막 값보다 1 크다.)
+	for(var i = 0; i < list.length; i++){
+		// 아이디가 fr인 태그에 버튼을 추가해준다.
+		var el = document.getElementById('fr');
+		el.innerHTML = el.innerHTML + '<div class="inblock m3 w3-button mgl10 mgb10 ' + list[i] + '">' + list[i] + '</div>';
+		/*                   (뒤쪽 '>' 앞에 공백이 없기 때문에 mgb10 뒤에 한칸띄고 '로 문자열 닫아줘야 클래스가 제대로 기능함)
+			'<div class="inblock m2 w3-button mgl10"' + ' w3-blue'
+			==> '<div class="inblock m2 w3-button mgl10" w3-blue' ==> XXXXX
+		*/
+	}
+
+</script>
+</body>
+</html>

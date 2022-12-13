@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 맨 마지막 변수 no1, no2에 기억된 숫자를 계산하세요. 웹브라우저로 실행하지 말고.
+	
+	var no1 = 10;
+	var no2 = ++no1 + ++no1;
+	//추측 값 : no1 = 12, no2 = 23
+	
+	var no1 = 10;
+	var no2 = no1++ + ++no1;
+	//추측 값 : no1 = 11, no2 = 22
+	
+	var no1 = 10;
+	var no2 = ++no1 + no1++;
+	//추측 값 : no1 = 11, no2 = 22
+		
+	var no1 = 10;
+	var no2 = no1++ + no1++;
+	//추측 값 : no1 = 11, no2 = 21
+	
+	// 풀이
+	//  a + b 로 영역 지정했을 때, a의 적용 값이 b에 적용된다.
+	// ++a면 a+1 값이 b에 들어가는 것. a++는 b에 적용되지 않는다. 다음 라인에서 변수 등장했을 때 +1이 적용된다.
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

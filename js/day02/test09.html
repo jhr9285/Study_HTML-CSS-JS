@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+		반복문
+			for : 카운터변수 생성부가 형식에 포함됨
+				형식)
+					for(카운터변수 생성부; 조건식; 증감식){
+					실행문...
+					}
+			
+			while : X,  위에서 횟수를 제한할 카운터변수를 만들고 시작해야 함
+						선조건 처리명령 : 최악의 경우 한번도 실행하지 않음
+				형식) 
+					카운터변수 생성...
+					while(조건식){
+					실행문...
+				   	}
+					
+			------------------------------------------------------------------- 
+			
+			
+			do ~ while : X, 위에서 횟수를 제한할 카운터변수를 만들고 시작해야 함
+						후조건 처리명령 : 최악의 경우에도 한번은 실행
+				형식) 
+					do {
+						실행문...
+					} while(조건식); ==> 조건식이 참이면 do 블럭을 다시 실행.
+					
+	*/
+	var dan = 8;
+	var gop = 1;
+	
+	while(gop < 10) {
+		document.write('<h3> ' + dan + ' x ' + gop + ' = ' + (dan*gop) + ' </h3>');
+		gop++; // 카운터변수 증감
+	} 
+	
+	dan = 7;
+	gop = 1;
+	
+	do {
+		document.write('<h3> ' + dan + ' x ' + gop + ' = ' + (dan*gop) + ' </h3>');
+		gop++; // 카운터변수 증감
+	} while(gop < 10);
+</script>
+</head>
+<body>
+
+</body>
+</html>

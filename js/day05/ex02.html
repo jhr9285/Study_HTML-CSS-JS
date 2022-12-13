@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	ex02)
+		다섯 자리 숫자를 입력받아서
+		입력받은 숫자가 회문수인지 아닌지를 판별해주는 프로그램을 작성하세요.
+		
+	참고)
+		회문수 : 숫자 중 앞에서부터 읽어도, 뒤에서부터 읽어도 똑같은 숫자
+		ex, 12321 => 회문수O
+			12312 => 회문수X
+			
+	Tip : 조건문 + 반복문으로 처리 (배열도 들어갈 듯)
+*/
+
+	var num = prompt('다섯 자리 숫자 입력 : ');
+	var result = '회문수이다'
+		
+	for(i = 0; i < 2; i++){
+		var num1 = num[i];
+		var num2 = num[num.length - 1 - i];
+		
+		if(num1 != num2){
+			result = '회문수가 아니다';
+		break;
+		}
+	}
+		
+	alert(result);
+	
+	
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

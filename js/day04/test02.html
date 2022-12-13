@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript">
+	// 원피스 멤버 5명을 기억할 배열을 만들고 멤버를 채우세요.
+	var oneps = ['chopa', 'lupy', 'namy', 'sanji', 'zoro'];
+	/* 
+		배열 만드는 형식)
+			var 변수이름 = [데이터1, 데이터2, 데이터3, ... ];
+			
+		배열은 '객체'
+		java : [] 안에는 동일한 종류의 데이터만 입력할 수 있다. ex) [1, 2, 3, 4, 5] (O)  [1, 한국, abc] (X)
+		javascript : 다른 종류의 데이터도 섞어서 넣을 수 있다. ex) [1, 2, 3, 4, 5] (O)  [1, 한국, abc] (O)
+		
+	*/
+	
+//	alert(typeof oneps);
+	var adata = ['chopa', 25, '드럼왕국', '의사', 90.0, false];
+	
+	/* 
+		문자열은 반드시 따옴표로 표현해야 한다.
+		만약 var a = [chopa, 25]; 라고 작성한다면, chopa는 문자열이 아니라 식별자(변수 or 함수)다.
+		
+		배열 사용방법)
+		==> 배열에 기억된 데이터는 위치값을 이용해서 꺼내고 채울 수 있다.
+		
+			 형식) 배열변수[위치값]
+			 	ex) 꺼내는 작업 : var name = adata[0];
+			 		수정 작업 : adata[4] = 90.1;
+	*/
+	alert('adata mame : ' + adata[0]);
+	
+	adata[4] = 90.1;
+	alert('chopa height : ' + adata[4]);
+
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

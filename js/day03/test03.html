@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript">
+/* 
+	두 수를 입력받아서 두 수 사이의 수들의 합을 구해서 반환해주는 함수를 작성하고 실행하세요.
+*/
+
+//  (1)
+/* 	function getSum(no1, no2){
+		// 합을 기억할 변수
+		var sum = 0;
+		// 먼저, 두 수 중 큰 수를 판별해서 기억시킴 
+		var min, max;
+		if(no1 > no2){
+			min = no2;
+			max = no1;
+		} else {
+			min = no1;
+			max = no2;
+		}
+		
+		for(i = min; i < (max + 1); i++){
+			sum = sum + i;
+		}
+		
+		// 만들어진 합을 반환
+		return sum;
+	} */
+	
+	
+//  (2)
+	function getSum(no1, no2){
+		var sum = 0;
+		if(no1 > no2){
+			var tmp = no1; // tmp의 용도 : 큰 값 저장해서 no2로 돌리기 위한 매개체
+			no1 = no2; // no1를 작은 수로 만든다
+			no2 = tmp; // no2를 큰 수로 만든다
+		}
+		
+		for(i = no1; i < (no2 + 1); i++){  // i에 작은 수 대입, 큰 수에 도달할 때까지 1씩 증가를 반복
+			sum = sum + i; // sum 이라는 변수에 작은수+(작은수+1)+(작은수2)+...+(큰수) 값이 들어가도록 하는 연산식
+		}
+		// i = no2 까지 만들어진 합을 반환
+		return sum;
+	}
+	
+	// 숫자 입력
+	var num1 = parseInt(prompt('첫 번째 숫자 : '));
+	var num2 = parseInt(prompt('두 번째 숫자 : '));
+
+	// 출력함
+	document.write('<h2>입력한 두 수 ' + num1 + ' 과(와) ' + num2 + ' 사이의 합은 \n' + getSum(num1, num2) + '입니다. </h2>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+		대입 연산자 :
+			변수에 데이터를 대입할 때 사용하는 연산자
+			제일 나중에 실행되는 연산자
+			진행방향이 오른쪽에서 왼쪽으로 진행된다.
+			
+		연산 기호)
+			=
+			+=
+			-=
+			*=
+			/=
+			%=
+				
+		var no = 10;
+		
+		no += 2;
+		==> no = no + 2;
+		
+		no -= 10;
+		==> no = no - 10;
+		
+		no *= 3;
+		==> no = no * 3;
+		
+		no /= 3;
+		==> no = no / 3;
+		
+		no %= 3;
+		==> no = no % 3;
+	*/
+	
+	// 나이를 입력받아서 입력받은 나이가 성인인지 아닌지 판별하는 프로그램을 작성하세요.
+	// 성인 기준 나이는 20세입니다.
+	
+	// 작업 순서
+	// 1. 나이를 입력받는다.
+	// 2. 정수로 변환한다.
+	// 3. 비교해서 결과를 변수에 담는다.
+	// 4. 출력한다.
+	
+	var str = prompt('나이를 입력하세요.');
+	var age = parseInt(str); // parse : 변환한다는 의미 ('파싱') ==> parseInt : 정수로 변환한다 
+	var result = (age >= 20) ? '성인' : '미성년'
+	document.write('<h3>입력한 나이 [ ' + age + ' ] 는</h3>');
+	document.write('<h1>' + result + '입니다.</h1>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	ex08)
+		두 사람이 등산을 한다.
+		한 사람은 정상에서 1.07m/s로 내려오고
+		다른 한 사람은 정상으로 0.54m/s로 올라간다.
+		두 사람이 만나는 시간은 몇 분 몇 초 후인지 계산해서 출력하세요.
+		
+		산의 높이는 7568m
+*/
+	var sec = 1;
+	
+	while(true){
+		
+		if(sec * 0.54 >= (7568 - (1.07 * sec))){ // 올라가던 사람이 내려오던 사람을 처음으로 만난 경우
+			break; // 만났을 때 멈추도록 함
+		}
+		sec++;
+	}
+	
+	document.write('총 초는 ' + sec + '초<br>');
+	
+	var min = parseInt(sec / 60);
+	sec = sec % 60;
+	
+	var hour = parseInt(min / 60);
+	min = min % 60;
+	
+	document.write(hour + '시간, ' + min + '분, ' + sec + '초');
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

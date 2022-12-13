@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	ex06)
+		두 수를 입력받아서
+		두 수의 최대공약수를 구해서 출력하세요.
+		
+		최대 공약수 : 두 수의 약수중 최대 숫자
+		
+		ex) 6과 12의 최대공약수 : 6
+			10과 15의 최대공약수 : 5
+			
+	* label이 붙은 for 명령
+	
+		형식) *라벨이름은 아무렇게나 지어도 됨. 기능은 동일함.
+			라벨이름:
+			for(;;){		
+			
+				for(;;){
+					
+					if(){
+						continue/break 라벨이름;
+					}
+				}
+			}
+*/
+
+	var num1 = parseInt(prompt());
+	var num2 = parseInt(prompt());
+	
+	var max = num1 < num2 ? num2 : num1;
+	
+	for(var j = 1; j < max; j++){ 
+		if(num1 % j == 0 && num2 % j == 0){
+			document.write(num1 + '과 ' + num2 + '의 최소공배수는 ' + max + '이다. <br>');
+			break;
+			}
+		}	
+	
+	// 선생님 버전
+	
+	// 두 수 중 작은 수를 찾아낸다.
+	var min = num1 < num2 ? num1 : num2 ;
+	
+	for(var i = min; i > 0; i--){ // 두 수 중 작은 수부터 1씩 감소시킨다
+		if(num1 % i == 0 && num2 % i == 0){
+			// 두 수의 공약수이므로 처음 조건에 만족할 때의 값이 최대공약수이므로 그때 즉시 종료함
+			document.write(num1 +' 과 ' + num2 + ' 의 최대공약수는 ' + i + ' 이다.<br>');
+			break;
+			}
+		}
+	
+		
+
+// 5 x 5의 계산이 나오면 그 단의 출력을 멈추고 다음 단으로 진행하는 구구단을 출력하세요. 
+	
+/* 	loop://라벨 이름(label), 아무거나 써도 됨. 기능은 같음.
+	for(var dan = 2; dan < 10; dan++){
+		document.write(dan + '단<br>');
+		for(var gop = 1; gop < 10; gop++){
+			if(dan == 5 && gop == 5){
+				document.write('<br>');
+				continue loop; // dan과 gop이 모두 5인 경우, gop++을 건너뛰고 dan++로 가게 하는 것이 continue의 기능.
+								// 위 경우, dan이 5고 gop이 4일 때까지는 값이 출력된다. 둘 다 5인 순간부터 5x5~5x9는 스킵.
+			}
+			document.write(dan + ' x ' + gop + ' = ' + (dan * gop) + '<br>');
+		}
+	}
+ */
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript">
+
+/* 
+	!!!숙제!!! (조건문)
+	
+	정수 세개를 입력받아서
+	
+	1. 제일 큰 수를 출력하세요.
+	
+	2. 제일 큰 수, 제일 작은 수, 가운데 수를 출력하세요.
+	변수 세 개 만들기 (max, mid, min)
+*/
+	
+/* 	var a = prompt('첫 번째 수 입력 :');
+	var b = prompt('두 번째 수 입력 :');
+	var c = prompt('세 번째 수 입력 :'); 
+	
+	var max;
+	var mid;
+	var min;
+
+	// if 조건문의 false값까지 모두 채워줘야 한다! 안그러면 undefined 데이터값이 나온다!
+	// if를 두개로 나누어 만들어야 했다! (아래는 미완성 코드)
+	
+	if(c > b){ 
+		if(c > a) { // c > b > a
+			if (b > a) {
+				max = c;
+				mid = b;
+				min = a;
+			} else { // c > a > b
+				max = c;
+				mid = a;
+				min = b;
+			}
+		} else { // a > c > b
+			max = a;
+			mid = c;
+			min = b;
+		}
+	} else if(a > c) { // a,b > c 
+		if(a > b) {
+			max = a; // a > b > c
+			mid = b;
+			min = c;	
+		} else { // b > a > c
+			max = b;
+			mid = a;
+			min = c;	
+		}
+	} else { // b > c > a
+		max = b;
+		mid = c;
+		min = a;
+	}
+	
+ 	document.write('제일 큰 수 : ' + max + '<br>');
+	document.write('가운데 수 : ' + mid + '<br>');
+	document.write('제일 작은 수 : ' + min + '<br>');  */
+
+	
+	
+	// 선생님 버전 (조건연산자-삼항)
+
+/* 	var no1 = parseInt(prompt('정수 입력 : '));
+	var no2 = parseInt(prompt('정수 입력 : '));
+	var no3 = parseInt(prompt('정수 입력 : '));
+	
+	var max = (no1 > no2) ? (no1 > no3) ? no1 : no3 : ((no2 > no3) ? no2 : no3) ;
+	var min = (no1 > no2) ? (no2 > no3) ? no3 : no2 : ((no1 > no3) ? no3 : no1) ;
+	var mid = (no1 > no2) ?
+			// no1 > no2 일 때
+				(no2 > no3) ? 
+						// no2 > no3 이면 mid = no2
+						(no2) :
+							// no3 > no2 이면, no1과 no3의 크기 비교 필요
+							((no1 > no3) ? no3 : no1 ) // no1 > no3 이면 mid = no3, no3 > no1 이면 mid = no1
+							:
+			// no2 > no1 일 때 
+				(no3 > no1) ? 
+						// no3 > no1 이면 no2와 no3의 크기 비교 필요	
+						((no2 > no3) ? no3 : no2) // no2 > no3 이면 mid = no3, no3 > no2 이면 mid = no2
+							// no2 > no1 , no1 > no3 이면 mid = no1;
+								: (no1);
+	
+	document.write('제일 큰 수 : ' + max + '<br>');
+	document.write('가운데 수 : ' + mid + '<br>');
+	document.write('제일 작은 수 : ' + min + '<br>'); */
+	
+	
+	// 선생님 버전 (조건연산자-if문)  (선생님꺼 보고 마저 채우기)
+	
+	var no1 = parseInt(prompt('정수 입력 : '));
+	var no2 = parseInt(prompt('정수 입력 : '));
+	var no3 = parseInt(prompt('정수 입력 : '));
+	
+	// if문을 두개로 구성한다.
+	// (1)
+ 	if(no1 > no2) {
+ 		
+	// 첫번째 if가 true - no1 > no2 인 경우
+		if(no1 > no3) { 
+			
+		// 두번째 if가 true - no1 > no2,no3 인 상태
+			max = no1; // 최댓값 no1로 확정
+			
+			if(no2 > no3) { // no2와 no3 크기비교 1
+			// 세번째 if가 true - no2 > no3
+				mid = no2;
+				min = no3;
+			}
+			if(no3 > no2) { // no2와 no3 크기비교 2
+			// 세번째 if가 false - no3 > no2
+				mid = no3;
+				min = no2;
+			}
+		}
+		// 두번째 if가 false - no1 > no2, no3 > no1 -> no3 > no1 > no2 
+		if(no3 > no1){			
+		max = no3;
+		mid = no1;
+		min = no2;
+		}	
+ 	}
+	// (2)
+	if(no2 > no1) {
+		if(no2 > no3){
+			max = no2;
+			
+			if(no1 > no3){
+				mid = no1;
+				min = no3
+			}
+			if(no1 < no3){
+				mid = no3;
+				min = no1;
+			}
+		}
+		
+		if(no2 < no3){
+			// no1 < no2 < no3
+			max = no3;
+			mid = no2;
+			min = no1;
+		}
+	}	
+	
+	document.write('제일 큰 수 : ' + max + '<br>');
+	document.write('가운데 수 : ' + mid + '<br>');
+	document.write('제일 작은 수 : ' + min + '<br>'); 
+	
+	
+	// 선생님 버전 (조건연산자-if else문)
+	
+/*  if(no1 > no2) {
+		
+	// 첫번째 if의 True - no1 > no2 인 경우
+		if(no1 > no3) {
+			
+		// 두번째 if의 True - no1 > no2,no3 인 상태
+			max = no1; // no1은 최대값임이 확정됨
+			if(no2 > no3) { // no2, no3 크기비교
+			// 세번째 if의 True - no2 > no3
+				mid = no2;
+				min = no3;
+			// 세번째 if의 False - no3 > no2
+			} else {
+				mid = no3;
+				min = no2;
+			}
+		// 두번째 if의 False - no1 > no2, no3 > no1 => no3 > no1 > no2
+		} else {
+			max = no3;
+			mid = no1;
+			min = no2;
+		}
+	} 
+	
+	// 첫번째 if의 False - no2 > no1 인 경우
+		else {
+		if(no2 > no3) {
+		// 네번째 if의 True - no2 > no1,no3
+			max = no2; // no2는 최대값임이 확정됨
+			if(no1 > no3) { // no1, no3 크기비교
+				// 다섯번째 if의 True - no1 > no3
+				mid = no1;
+				min = no3;
+				// 다섯번째 if의 False - no3 > no1
+			} else {
+				mid = no3;
+				min = no1;
+			}
+		// 네번째 if의 False - no2 > no1, no3 > no2 => no3 > no2 > no1
+		} else {
+			max = no3;
+			mid = no2;
+			min = no1;
+		}
+	}
+	
+	document.write('제일 큰 수 : ' + max + '<br>');
+	document.write('가운데 수 : ' + mid + '<br>');
+	document.write('제일 작은 수 : ' + min + '<br>'); */
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

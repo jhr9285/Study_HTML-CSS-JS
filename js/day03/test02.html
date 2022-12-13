@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript">
+	// 두 정수를 입력받아서 합을 반환해주는 함수를 만든다.
+	
+	function getTotal(no1, no2){ // 여기에 나열된 매개변수 갯수(no1, no2 2개)만큼만 함수 사용 시 동일하게 넣어야 실행이 된다.
+		// 합을 구한다.				ex) getTotal() XXX,  getToTal(10) XXX,  getTotal (10, 20, 30) XXX
+		var sum = no1 + no2;     // getTotal 함수에 넣인 no1, no2는 자동으로 그 함수 블럭안에서만 사용할 수 있는 지역변수가 된다.
+		// 합을 반환한다.           var sum = no1 + no2; 에서 var를 빼면 sum은 전역변수가 된다.
+		return sum;
+	}
+	
+	// 두 수를 입력받아서 합을 구해서 출력한다.
+	var num1 = parseInt(prompt('정수 입력 : '));
+	var num2 = parseInt(prompt('정수 입력 : '));
+	
+	// 합을 구한다.
+	var sum = getTotal(num1, num2);
+	alert('입력한 두 수 \n' + num1 + '와 ' + num2 + '의 합은 \n' + sum + '입니다.')
+	
+	// 문자열 데이터 중
+	//	 \n : 줄바꿈기호
+	// 	 \r\n : 엔터키
+
+/* 
+	참고)
+		함수를 정의할 때 함수이름을 만들지 않아도 사용할 수 있다.
+		이때 이 함수를 '무명함수'라고 부르고,
+		이 경우는 (2)매개변수에서 함수를 바로 정의해서 사용하거나,
+		(1)변수에 기억시켜서 사용해야 된다.
+		
+		(1) var abc = function(매개변수1, 매개변수2, ...){
+			  실행내용....
+			  [ return [반환값] ;] (<- 생략가능)
+		   };
+		==> function abe(매개변수1, 매개변수2, ...){} 와 같은 함수.
+		
+		(2) function abc(function(){
+			  실행내용....
+			  [ retutn [반환값] ;] (<- 생략가능)
+		   });
+ */
+</script>
+</head>
+<body>
+
+</body>
+</html>

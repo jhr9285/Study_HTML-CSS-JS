@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이중 for문</title>
+<script type="text/javascript">
+	/* 
+		주사위 두 개의 두 눈의 합이 6인 경우를 모두 출력하세요.
+	*/
+
+	for(var i = 1; i <= 6; i++) { // 주사위 a
+		for(var j = 1; j <= 6; j++) { // 주사위 b
+			if((i+j) == 6){
+				document.write('<h3>a 주사위의 눈이 ' + i +
+						'이고 b 주사위의 눈은 ' + j + '일 때 두 눈의 합은 6입니다.')
+			}
+		}
+	}
+	
+	// if 조건 블럭 안의 실행문까지 모두 실행 되어야 다시 for의 i 변수로 돌아와 다시 처음부터 진행한다.
+	
+	
+	// 선생님 버전
+	
+	for(var i = 1; i <= 6; i++) { // 주사위 a
+		for(var j = 1; j <= 6; j++) { // 주사위 b
+			var hap = i + j;
+		
+			if(hap == 6) {
+				document.write('<h3>a 주사위의 눈이 ' + i +
+						'이고 b 주사위의 눈은 ' + j + '일 때 두 눈의 합은 ' + hap + '입니다.')
+			}
+		}
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

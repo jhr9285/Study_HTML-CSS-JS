@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+		산술 연산자 연습문제
+		
+		76,572 원을 지불하려고 한다.
+		필요한 화폐단위가 몇개씩인지 계산해서 출력하세요.
+		
+		참고)
+			화폐단위
+			50000, 10000, 5000, 1000, 500, 100, 50, 10, 1
+			
+		변수를 만들고 변수에 계산된 값을 입력해서 출력하세요.
+		
+		참고)
+			실수를 정수로 바꾸는 방법
+				parseInt(실수)
+	*/
+
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	var payMoney = 76572;
+
+	var unit1 = 50000;
+	var unit2 = 10000;
+	var unit3 = 5000;
+	var unit4 = 1000;
+	var unit5 = 500;
+	var unit6 = 100;
+	var unit7 = 50;
+	var unit8 = 10;
+	var unit9 = 1;
+
+	document.write('지불해야 하는 돈 : '+ payMoney + '원' + '<br>');
+	
+	var result1 = (parseInt(payMoney / unit1));
+	document.write('50000원 단위 갯수 : ' + result1 + '<br>');
+	var sum = (unit1 * result1);
+	
+	var result2 = (parseInt((payMoney - sum) / unit2));
+	document.write('10000원 단위 갯수 : ' + result2 + '<br>');
+	var sum = sum + (unit2 * result2);
+	
+	var result3 = (parseInt((payMoney - sum) / unit3));
+	document.write('5000원 단위 갯수 : ' + result3 + '<br>');
+	var sum = sum + (unit3 * result3);
+	
+	var result4 = (parseInt((payMoney - sum) / unit4));
+	document.write('1000원 단위 갯수 : ' + result4 + '<br>');
+	var sum = sum + (unit4 * result4);	
+	
+	var result5 = (parseInt((payMoney - sum) / unit5));
+	document.write('500원 단위 갯수 : ' + result5 + '<br>');
+	var sum = sum + (unit5 * result5);	
+	
+	var result6 = (parseInt((payMoney - sum) / unit6));
+	document.write('100원 단위 갯수 : ' + result6 + '<br>');
+	var sum = sum + (unit6 * result6);	
+	
+	var result7 = (parseInt((payMoney - sum) / unit7));
+	document.write('50원 단위 갯수 : ' + result7 + '<br>');
+	var sum = sum + (unit7 * result7);	
+	
+	var result8 = (parseInt((payMoney - sum) / unit8));
+	document.write('10원 단위 갯수 : ' + result8 + '<br>');
+	var sum = sum + (unit8 * result8);	
+	
+	var result9 = (parseInt((payMoney - sum) / unit9));
+	document.write('1원 단위 갯수 : ' + result9 + '<br>');
+	
+	document.write('<br>');
+	
+	// 선생님 ver
+	
+	var total = 76572;
+	var calc = total;
+	
+	document.write('지불해야 하는 돈 : '+ total + '원' + '<br>');
+	
+	var oman = parseInt(calc / 50000); // 5만원권
+	calc = calc % 50000; // 5만으로 나눈 나머지
+	document.write('50000원 단위 갯수 : ' + oman + '<br>');
+	document.write('잔액 : ' + calc + '<br>');
+	
+	var man = parseInt(calc / 10000);
+	calc = calc % 10000;
+	document.write('10000원 단위 갯수 : ' + man + '<br>');
+	document.write('잔액 : ' + calc + '<br>');
+	
+	var ocheon = parseInt(calc / 5000);
+	calc = calc % 5000;
+	document.write('5000원 단위 갯수 : ' + ocheon + '<br>');
+	document.write('잔액 : ' + calc + '<br>');
+	
+	var cheon = parseInt(calc / 1000);
+	calc = calc % 1000;
+	document.write('1000원 단위 갯수 : ' + cheon + '<br>');
+	document.write('잔액 : ' + calc + '<br>');
+	
+	var obaek = parseInt(calc / 500);
+	calc = calc % 500;
+	document.write('500원 단위 갯수 : ' + obaek + '<br>');
+	document.write('잔액 : ' + calc + '<br>');
+	
+	var baek = parseInt(calc / 100);
+	calc = calc % 100;
+	document.write('100원 단위 갯수 : ' + baek + '<br>');
+	document.write('잔액 : ' + calc + '<br>');
+	
+	var osib = parseInt(calc / 50);
+	calc = calc % 50;
+	document.write('50원 단위 갯수 : ' + osib + '<br>');
+	document.write('잔액 : ' + calc + '<br>');
+	
+	var sib = parseInt(calc / 10);
+	var il = calc % 10;
+	document.write('10원 단위 갯수 : ' + sib + '<br>');
+	document.write('1원 단위 갯수 : ' + il + '<br>');
+	
+	//출력
+	
+	document.write('<h3>' + total + '원은<h3>');
+	document.write('<h3>오만원권 : ' + oman + '장<h3>');
+	document.write('<h3>만원권 : ' + man + '장<h3>');
+	document.write('<h3>오천원권 : ' + ocheon + '장<h3>');
+	document.write('<h3>천원권 : ' + cheon + '장<h3>');
+	document.write('<h3>오백원권 : ' + obaek + '장<h3>');
+	document.write('<h3>백원권 : ' + baek + '장<h3>');
+	document.write('<h3>오십원권 : ' + osib + '장<h3>');
+	document.write('<h3>십원권 : ' + sib + '장<h3>');
+	document.write('<h3>일원권 : ' + il + '장<h3>');
+	document.write('<h3>이 필요합니다.<h3>');
+	
+
+	
+</script>
+	
+</body>
+</html>

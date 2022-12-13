@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript">
+/* 
+	세 자리 숫자를 입력받아서 가장 가까운 100의 배수를 출력해주는 프로그램을 작성하세요.
+	
+	ex)
+		241 ==> 200
+		251 ==> 300
+		301 ==> 300
+		378 ==> 400
+		
+	해답 : 100으로 나눈 나머지가
+			50 이상인 경우는 십의 자리에서 반올림한 숫자,
+			50 미만인 경우는 십의 자리에서 버림한 숫자가 된다.
+			따라서 100으로 나눈 나머지에 따라서 처리된다.
+*/
+	
+/* 	var num = parseInt(prompt()); 
+	
+	num1 = parseInt(num * 0.01) * 100;
+	calc1 = num % num1; 
+	
+
+	if(calc1 >= 50) {
+		num = num1 + 100;
+	} else {
+		num = num - calc1;
+	} */
+ 
+	//선생님 버전
+	
+	var num = parseInt(prompt()); 
+	var rest = num % 100;
+	var result = 0;
+	
+	if(rest >= 50){
+		result = (parseInt((num / 100) + 1)) * 100;
+	} else {
+		result = parseInt(num / 100) * 100;
+	}
+	document.write('<h1>입력한 세 자리 정수 ' + num + '의 가장 가까운 100단위 숫자는 ' + result + '입니다. </h1>');
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
